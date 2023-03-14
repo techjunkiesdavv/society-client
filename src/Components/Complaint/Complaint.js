@@ -12,7 +12,7 @@ const Complaint = () => {
     console.log("complaint:", complaint);
 
     setComplaint("");
-    setComplaint("");
+    setComplaintSubject("");
 
     setSubmitted(true);
   };
@@ -24,6 +24,7 @@ const Complaint = () => {
           type="text"
           className={styles.input}
           placeholder="Enter subject here"
+          required
           onChange={(e) => {
             setComplaintSubject(e.target.value);
           }}
@@ -31,6 +32,7 @@ const Complaint = () => {
         <textarea
           className={styles.textarea}
           placeholder="Enter Message here!!!!!!!"
+          required
           onChange={(e) => {
             setComplaint(e.target.value);
           }}
