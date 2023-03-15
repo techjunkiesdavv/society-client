@@ -1,3 +1,4 @@
 import Complaint from "./Complaint/Complaint";
+import About from './About/About';
 
-export { Complaint };
+export { Complaint,About };
