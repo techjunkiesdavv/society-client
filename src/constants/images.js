@@ -1,11 +1,11 @@
-import building from '../assets/image230.png';
-import group from '../assets/image229.png';
-import flat from '../assets/image231.png';
+import building from '../assets/building.png';
+import group from '../assets/group.png';
+import flat from '../assets/flat.png';
 
 
-
-export default{
+const images={
     building,
     flat,
-    group
-};
+    group,
+}
+ export default  images;
