@@ -1,4 +1,4 @@
-import React ,{useState}from 'react'
+import React from 'react'
 import {images} from '../../constants';
 
 import styles from "./about.module.scss";
