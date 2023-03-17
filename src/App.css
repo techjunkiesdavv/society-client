@@ -1,0 +1,8 @@
+.fixed{
+    position: fixed;
+    float: right;
+}
+
+.variable{
+    position: relative ;
+}

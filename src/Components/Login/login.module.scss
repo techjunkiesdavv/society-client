@@ -1,0 +1,251 @@
+.loginpage {
+    margin-right: 0%;
+    padding-right: 0%;
+    height: 100vh;
+    background-color: #F0EDE2;
+    width: 28rem;
+    box-sizing: border-box;
+    border: 1px solid #BABABA;
+    display: flex;
+    position: relative; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    .form {
+
+        input[type="checkbox"] {
+            /* Hide the default checkbox */
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            outline: none;
+            ::-ms-ticks-after{
+                color: white;
+            }
+          }
+          
+          /* Create the custom checkbox shape */
+          input[type="checkbox"]::before {
+            content: "";
+            display: inline-block;
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 0px;
+            background-color: transparent;
+            border: 1.5px solid #000;
+            margin-top:0.18rem;
+            transition: all 0.3s ease-in-out;
+          }
+          
+          /* Change the checkbox color when checked */
+          input[type="checkbox"]:checked::before {
+            background-color: #EF504D;
+            border-color: #EF504D;
+            content: "\1F5F8";
+            ::-ms-ticks-after{
+                color: white;
+                
+            }
+            
+          }
+
+        height: 60%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .check{
+            font-weight: bold;
+            color: black;
+            font-family: 'Merriweather', serif;
+        }
+
+        .logo{
+            width:40%;
+            height:20%;
+            box-sizing: border-box;
+            border: 1px solid #BABABA;
+            border-radius: 8%;
+        }
+
+        .head{
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: 0.1rem;
+            padding-top: 8%;
+        }
+
+        .emailinfo{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            border: 1px solid #BABABA;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            padding-top: 20%;
+
+            .email{
+                font-family: 'Jost', sans-serif ;
+                font-weight: 300;
+                font-size: 1.1rem;
+                border: none;
+                padding: 0.5rem;
+                outline: none;
+                width:100%;
+                letter-spacing: 0.1rem;
+                background: transparent;
+                padding-left: 1rem;
+            }
+
+            .emailimg{
+                width: 7%;
+                height: 70%;
+            }
+        }
+
+        .passinfo{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            border: 1px solid #BABABA;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            padding-top: 6%;
+
+            .pass{
+                font-family: 'Jost', sans-serif ;
+                font-weight: 300;
+                font-size: 1.1rem;
+                border: none;
+                padding: 0.5rem;
+                outline: none;
+                width:100%;
+                letter-spacing: 0.1rem;
+                background: transparent;
+                padding-left:1rem;
+                
+            }
+
+
+            .passimg{
+                width: 8%;
+                height: 60%;
+            }
+
+            .eyeopen{
+                width:6%;
+                height: 50%;
+            }
+
+            .eyeopen:hover{
+                cursor: pointer;
+            }
+        }
+
+        .remember{
+            display: flex;
+            flex-direction: row;
+            margin-left: 0rem;
+            margin-top: 5%;
+            align-self: flex-start;
+
+            .remembertext{
+                font-family: 'Jost', sans-serif ;
+                font-weight: 300;
+                font-size: 1rem;
+                letter-spacing: 0.05rem;
+                padding-left: 0.4rem;
+            }
+
+            
+                .remembercheck{
+                    margin-top:4rem;
+                }
+        
+        }
+
+        .forgot{
+            font-family: 'Jost', sans-serif ;
+                font-weight: 300;
+                font-size: 1rem;
+                letter-spacing: 0.05rem;
+                padding-left: 0.4rem;
+                align-self: flex-end;
+                margin-top: -6.5%;
+        }
+
+        .forgot:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .loginbtn{
+            border: none;
+            background-color: #EF504D;
+            padding-top: 2.5% ;
+            padding-bottom: 2.5% ;
+            padding-left: 42%;
+            padding-right: 42%;
+            border-radius: 3rem;
+            font-weight: bold;
+            color: white;
+            font-family: 'Jost', sans-serif ;
+            font-size: 1rem;
+            margin-top: 20%;
+            letter-spacing: 0.08rem;
+
+            &:hover {
+                background-color: #e04a48;
+                cursor: pointer;
+            }
+
+        }
+
+        .register{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 12%;
+
+            .text1{
+                font-family: 'Jost', sans-serif ;
+                font-weight: 300;
+                font-size: 1rem;
+                letter-spacing: 0.05rem;
+            }
+            
+            .text2{
+                font-family: 'Jost', sans-serif ;
+                font-weight: 300;
+                font-size: 1rem;
+                letter-spacing: 0.05rem;
+                color:#EF504D;
+                font-weight: bold;
+                padding-left: 0.25rem;
+            }
+
+            .text2:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+
+
+
+        
+    }
+} 

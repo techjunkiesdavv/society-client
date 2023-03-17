@@ -35,6 +35,7 @@ const Complaint = () => {
             setComplaint(e.target.value);
           }}
         ></textarea>
+        
         <button className={styles.btn} disabled={submitted}>
           Submit
         </button>
