@@ -1,9 +1,10 @@
-import { Complaint } from "./Components";
-
+import { Complaint,Profile } from "./Components";
 function App() {
   return (
     <div>
-      <Complaint />
+      <Profile/>
+      <Complaint/>
+      
     </div>
   );
 }
