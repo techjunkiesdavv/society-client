@@ -1,9 +1,10 @@
 import { Complaint } from "./Components";
-
+import {Sidebar} from "./Components";
 function App() {
   return (
-    <div>
-      <Complaint />
+    <div  className="container">
+      {/* <Complaint /> */}
+      <Sidebar/>
     </div>
   );
 }

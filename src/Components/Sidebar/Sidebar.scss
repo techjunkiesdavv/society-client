@@ -1,0 +1,56 @@
+.Sidebar {
+  position: fixed;
+  border-right: 2px solid #d9d9d9;
+  min-height: 100vh;
+  width: auto;
+  display: flex;
+  padding: 0rem 2rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f0ede2;
+  ul {
+    height: 100%;
+    padding: 0;
+    width: auto;
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    :hover {
+      cursor:pointer;
+      filter: invert(41%) sepia(87%) saturate(1130%) hue-rotate(337deg) brightness(97%) contrast(95%);
+    }   
+    .click {
+      
+      filter: invert(41%) sepia(87%) saturate(1130%) hue-rotate(337deg) brightness(97%) contrast(95%);
+    }   
+    li {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      margin: 1.75rem 0rem;
+      color: black;
+     
+        
+        svg {
+          width: 30px;
+          height: 30px;
+          margin-bottom: 0.3rem;
+          
+        }
+      
+         
+    }
+    svg {
+      // border-radius: 0px;
+      height: 40px;
+      width: 40px;
+      place-items: center;
+    }
+  }
+}
