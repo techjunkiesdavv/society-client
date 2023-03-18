@@ -52,7 +52,7 @@ const Profile = () => {
       </div>
       {bills.map((bill, i) => {
         return (
-          <div className={styles.billdetails}>
+          <div className={styles.billdetails} key={i}>
             <div className={styles.bill}>
               <p className={styles.billname}>{bill.billname}</p>
               <p className={styles.billamount}>Rs. {bill.billamount}</p>
