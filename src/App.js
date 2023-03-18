@@ -3,7 +3,7 @@ import {Sidebar} from "./Components";
 function App() {
   return (
     <div  className="container">
-      {/* <Complaint /> */}
+      <Complaint />
       <Sidebar/>
     </div>
   );
