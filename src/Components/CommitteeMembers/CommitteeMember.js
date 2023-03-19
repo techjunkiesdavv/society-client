@@ -84,7 +84,7 @@ const CommitteeMember = () => {
       <div className={styles.allcards} id="container">
         {detail.map((detail, i) => {
           return (
-            <div className={styles.card}>
+            <div className={styles.card} key={i}>
               <div className={styles.memberimg}>
                 <img src={detail.src} alt="memberProfile" />
               </div>
