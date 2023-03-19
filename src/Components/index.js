@@ -1,3 +1,3 @@
 import Complaint from "./Complaint/Complaint";
-
-export { Complaint };
+import Committee from "./CommitteeMembers/CommitteeMember"
+export { Complaint, Committee };

@@ -1,9 +1,10 @@
-import { Complaint } from "./Components";
+import { Complaint,Committee } from "./Components";
 
 function App() {
   return (
     <div>
       <Complaint />
+      <Committee/>
     </div>
   );
 }
