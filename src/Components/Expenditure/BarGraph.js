@@ -15,7 +15,7 @@ export const BarGraph = () => {
     <ResponsiveContainer width='100%' height="100%">
     <BarChart data={data} margin={{ bottom: 10, top:10 }}>
       <XAxis dataKey="name" interval={0} tick={{ fontSize: 12 }} />
-      <YAxis domain={[10, 50]} tick={{ fontSize: 12 }}  ticks={[10000, 20000, 30000, 40000, 50000]} tickFormatter={(tick) => `${tick / 1000}K`} />
+      <YAxis domain={[10, 50]} tick={{ fontSize: 12 }}  ticks={[10000, 20000, 30000, 40000, 50000]} tickFormatter={(tick) => `${tick / 1000}K`} axisLine={false} />
       <CartesianGrid horizontal={true} vertical={false} stroke="#9E9B9B" />
       <Tooltip />
       <Bar dataKey="expenses" barSize={100} radius={[5, 5, 0, 0]}>
