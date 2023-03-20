@@ -1,6 +1,5 @@
 .Sidebar {
-  // position: fixed;
-  width:15%;
+  width: 15%;
   border-right: 2px solid #d9d9d9;
   min-height: 100vh;
   display: flex;
@@ -19,13 +18,14 @@
     align-items: center;
     margin: auto;
     :hover {
-      cursor:pointer;
-      filter: invert(41%) sepia(87%) saturate(1130%) hue-rotate(337deg) brightness(97%) contrast(95%);
-    }   
+      cursor: pointer;
+      filter: invert(41%) sepia(87%) saturate(1130%) hue-rotate(337deg)
+        brightness(97%) contrast(95%);
+    }
     .click {
-      
-      filter: invert(41%) sepia(87%) saturate(1130%) hue-rotate(337deg) brightness(97%) contrast(95%);
-    }   
+      filter: invert(41%) sepia(87%) saturate(1130%) hue-rotate(337deg)
+        brightness(97%) contrast(95%);
+    }
     li {
       margin: auto;
       display: flex;
@@ -35,19 +35,14 @@
       height: auto;
       margin: 1.75rem 0rem;
       color: black;
-     
-        
-        svg {
-          width: 30px;
-          height: 30px;
-          margin-bottom: 0.3rem;
-          
-        }
-      
-         
+
+      svg {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 0.3rem;
+      }
     }
     svg {
-      // border-radius: 0px;
       height: 40px;
       width: 40px;
       place-items: center;
