@@ -19,6 +19,8 @@ export const BarGraph = () => {
       <CartesianGrid horizontal={true} vertical={false} stroke="#9E9B9B" />
       <Tooltip cursor={{fill: 'transparent'}} />
       <Bar dataKey="expenses" barSize={100} radius={[15, 15, 0, 0]}>
+      <Tooltip cursor={{fill: 'transparent'}} />
+      <Bar dataKey="expenses" barSize={100} radius={[5, 5, 0, 0]}>
         {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={entry.color} />
         ))}
