@@ -1,14 +1,14 @@
 import styles from "./CommitteeMember.module.scss";
 import React from "react";
-import Profile from "../../assets/sihphto3.jpeg";
-import phoneicon from "../../assets/phone.png";
-import homeicon from "../../assets/homeicon.png";
+import Profile from "../../assets/prof.jpg";
+import phoneicon from "../../assets/phoneicon.svg";
+import homeicon from "../../assets/homeicon2.svg";
 import leftArrow from "../../assets/leftArrow.svg";
 import rightArrow from "../../assets/rightArrow.svg";
 const CommitteeMember = () => {
   const detail = [
     {
-      name: "Jay Singh",
+      name: "Aatmaram Bhide",
       role: "kharab teacher",
       phone: "+91899889889",
       wing: "A",
@@ -16,7 +16,7 @@ const CommitteeMember = () => {
       src: Profile
     },
     {
-      name: "Jay Singh",
+      name: "Aatmaram Bhide",
       role: "kharab teacher",
       phone: "+91899889889",
       wing: "A",
@@ -24,7 +24,7 @@ const CommitteeMember = () => {
       src: Profile
     },
     {
-      name: "Jay Singh",
+      name: "Aatmaram Bhide",
       role: "kharab teacher",
       phone: "+91899889889",
       wing: "A",
@@ -32,7 +32,7 @@ const CommitteeMember = () => {
       src: Profile
     },
     {
-      name: "Jay Singh",
+      name: "Aatmaram Bhide",
       role: "kharab teacher",
       phone: "+91899889889",
       wing: "A",
@@ -40,7 +40,7 @@ const CommitteeMember = () => {
       src: Profile
     },
     {
-      name: "Jay Singh",
+      name: "Aatmaram Bhide",
       role: "kharab teacher",
       phone: "+91899889889",
       wing: "A",
@@ -48,7 +48,7 @@ const CommitteeMember = () => {
       src: Profile
     },
     {
-      name: "Jay Singh",
+      name: "Aatmaram Bhide",
       role: "kharab teacher",
       phone: "+91899889889",
       wing: "A",
@@ -56,7 +56,7 @@ const CommitteeMember = () => {
       src: Profile
     },
     {
-      name: "Jay Singh",
+      name: "Aatmaram Bhide",
       role: "kharab teacher",
       phone: "+91899889889",
       wing: "A",
@@ -64,7 +64,7 @@ const CommitteeMember = () => {
       src: Profile
     },
     {
-      name: "Jay Singh",
+      name: "Aatmaram Bhide",
       role: "kharab teacher",
       phone: "+91899889889",
       wing: "A",
