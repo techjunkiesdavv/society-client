@@ -45,8 +45,10 @@ const Expenditure = () => {
       <div className={styles.barContainer}>
         <div className={styles.left}>
           <hr />
+          <div className={styles.grpText}>
           <span>Society Balance</span>
           <h2>{numberWithCommas(SocietyBalance)} </h2>
+          </div>
         </div>
 
         <div className={styles.bar}>
@@ -56,9 +58,9 @@ const Expenditure = () => {
       <div className={styles.paymentHis}>
         <h2>Payment History</h2>
         <div className={styles.list}>
-          {data.map((item) => {
+          {data.map((item,index) => {
             return (
-              <div className={styles.item}>
+              <div className={styles.item} key={index}>
                 <div className={styles.lefta}>
                   <h4>{item.title}</h4>
                   <h6>{convertDateFormat(item.Date)}</h6>
