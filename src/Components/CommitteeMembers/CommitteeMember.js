@@ -1,5 +1,5 @@
 import styles from "./CommitteeMember.module.scss";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Profile from "../../assets/prof.jpg";
 import phoneicon from "../../assets/phoneicon.svg";
 import homeicon from "../../assets/homeicon2.svg";
@@ -72,12 +72,23 @@ const CommitteeMember = () => {
       src: Profile
     },
   ];
-  const scrollLeft = () => {
-    document.getElementById("container").scrollLeft -= 500;
+  const scrollLeft = (val) => {
+    document.getElementById("container").scrollLeft -= val;
   };
   const scrollRight = () => {
     document.getElementById("container").scrollLeft += 500;
-  };
+  }
+  const [seconds, setSeconds] = useState(1);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const currentTimeInSeconds = Math.floor(Date.now() / 1000);
+      setSeconds(currentTimeInSeconds);
+    }, 1000);
+    seconds%5===0&&scrollRight();
+    const element = document.getElementById("container");
+    element.scrollLeft===(element.scrollWidth - element.clientWidth)&&(scrollLeft(element.scrollLeft));
+    return () => clearInterval(interval);
+  }, [seconds]);
   return (
     <div className={styles.cmemberContainer}>
       <h2>Committee Members</h2>
@@ -113,7 +124,7 @@ const CommitteeMember = () => {
           src={leftArrow}
           alt="scrollarrow"
           className={styles.leftarrow}
-          onClick={() => scrollLeft()}
+          onClick={() => scrollLeft(500)}
         />
         <img src={rightArrow} alt="scrollarrow" onClick={() => scrollRight()} />
       </div>
