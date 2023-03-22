@@ -14,7 +14,7 @@ export default function AnnouncementHead() {
     ];
     const roller=()=>{
       const text = document.getElementById('text');
-      text.innerHTML = text.innerText.split("").map((char,i)=> `<span style="transform:rotate(${i*4.97}deg)">${char}</span>`).join("");
+      text.innerHTML = text.innerText.split("").map((char,i)=> `<span style="transform:rotate(${i*10}deg)">${char}</span>`).join("");
     }
    useEffect(roller,[]);
   return (
