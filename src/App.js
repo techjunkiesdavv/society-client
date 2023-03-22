@@ -1,8 +1,9 @@
-import { Complaint } from "./Components";
+import { Complaint,AnnouncementHead } from "./Components";
 
 function App() {
   return (
     <div>
+      <AnnouncementHead/>
       <Complaint />
     </div>
   );
