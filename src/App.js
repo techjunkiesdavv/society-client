@@ -1,4 +1,4 @@
-import { Complaint,Login,About,Profile } from "./Components";
+import { Complaint,Login,About,Profile,Sidebar } from "./Components";
 import './App.css';
 function App() {
   return (
@@ -7,5 +7,6 @@ function App() {
       <Login/>
       <Complaint />
       <Profile/>
+      <Sidebar/>
       </div>)}
 export default App;
