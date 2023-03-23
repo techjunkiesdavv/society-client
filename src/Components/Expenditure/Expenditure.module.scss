@@ -1,0 +1,89 @@
+.exp {
+
+    height: auto;
+    padding: 0px 30px;
+    background-color: #F0EDE2;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    .head {
+        font-size: 2rem;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+
+    }
+
+    .barContainer {
+
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+
+        .left {
+            hr {
+                border-width: thin;
+                width: 100%;
+                border-color: rgba(164, 164, 164, 0.167);
+                 font-family: 'Jost',sans-serif; // font family
+            }
+
+            align-self: flex-start;
+            width: 100%;
+            margin-bottom:35px;
+            .grpText{
+                padding-left: 20px;
+            }
+        }
+
+        .bar {
+            width: 100%;
+            height: 28rem;
+        }
+    }
+
+    .paymentHis {
+        h2{
+            padding: 5px;
+        }
+        .list {
+            padding: 5px;
+            margin-top: 40px;
+            display: flex;
+
+            flex-direction: column;
+
+            .item {
+                width: 100%;
+                height: 60px;
+                border-bottom: 1px solid gray;
+                display: flex;
+                padding: 2px;
+                margin-bottom: 20px;
+                border-radius: 0px 0px 5px 5px;
+
+                justify-content: space-between;
+
+                .lefta {
+                    align-self: flex-start;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    justify-content: space-between;
+                    h6{
+                        color:#404040 // color
+                    }
+                }
+
+                h3 {
+                    font-size: 1rem;
+                    font-family: 'Jost',sans-serif; // font family
+
+                }
+
+            }
+        }
+    }
+}
