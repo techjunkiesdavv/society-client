@@ -5,5 +5,6 @@ import Profile from "./Profile/Profile"
 import Login from "./Login/Login";
 import Expenditure from './Expenditure/Expenditure'
 import Committee from "./CommitteeMembers/CommitteeMember"
-export { Complaint,About,Login,Profile,Sidebar,Expenditure,Committee};
+import Register from "./Register/Register";
+export { Complaint,About,Login,Profile,Sidebar,Expenditure,Committee,Register};
 

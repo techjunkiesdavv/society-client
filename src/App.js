@@ -1,4 +1,4 @@
-import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee } from "./Components";
+import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Register} from "./Components";
 import './App.css';
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Sidebar/>
       <Expenditure />
       <Committee/>
+      <Register/>
     </div>
   );
 }
