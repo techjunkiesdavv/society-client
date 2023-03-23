@@ -1,3 +1,3 @@
-import Complaint from "./Complaint/Complaint";
+import Complaint from './Complaint/Complaint';
 
 export { Complaint };
