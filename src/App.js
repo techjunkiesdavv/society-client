@@ -1,10 +1,10 @@
-import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Register} from "./Components";
+import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Register,Announcement} from "./Components";
 import './App.css';
+
 function App() {
   return (
     <div>
-      <About/>
-      <Login/>
+      <Announcement/>
       <Complaint />
       <Profile/>
       <Sidebar/>
