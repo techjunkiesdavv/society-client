@@ -11,13 +11,12 @@ export default function Sidebar() {
     <div className="Sidebar">
       <ul>
         {SidebarData.map((val, key) => {
-          console.log(val.icon);
           return (
             <li
               className={activeElement === val.title ? "click" : ""}
               onClick={() => handleActiveElement(val.title)}
               key={key}
-              classname="row icon"
+              
             >
               <div>
                 <svg>{val.icon}</svg>
