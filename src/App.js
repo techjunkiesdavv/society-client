@@ -1,10 +1,10 @@
-import { Complaint } from "./Components";
-import{About} from './Components'
-
+import { Complaint,Login,About } from "./Components";
+import './App.css';
 function App() {
   return (
     <div>
       <About/>
+      <Login/>
       <Complaint />
     </div>
   );
