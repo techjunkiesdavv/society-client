@@ -1,4 +1,4 @@
-import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Register,Announcement,AnnouncementHead} from "./Components";
+import { Facilitycontacts,Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Register,Announcement,AnnouncementHead} from "./Components";
 import './App.css';
 import { useEffect, useState } from "react";
 import { fetchData } from "./api/fetch";
@@ -28,6 +28,7 @@ function App() {
       <Expenditure />
       <Committee/>
       <Announcement/>
+      <Facilitycontacts/>
       { contact.map((data,index)=><p key={index}>{data.name} {data.email} { data.message}</p>)}
     </div>
   );
