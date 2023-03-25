@@ -1,5 +1,6 @@
-import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Register,Announcement,AnnouncementHead, Bills} from "./Components";
+import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Announcement,AnnouncementHead, Bills} from "./Components";
 import './App.css';
+import styles from './App.module.scss';
 import { useEffect, useState } from "react";
 import { fetchData } from "./api/fetch";
 
@@ -10,25 +11,31 @@ import { fetchData } from "./api/fetch";
 
 //   { contact.map((data,index)=><p key={index}>{data.name} {data.email} { data.message}</p>)}
 function App() {
-
   const [contact,setContact]= useState([]) ;
     useEffect(() => {   
     fetchData('contact').then((data)=>setContact(data)) ;
   }, [contact]);
-
+  const [page,setPage]=useState("Home");
+  const [login,setLogin]=useState(false);
   return (
-    <div>
-      <AnnouncementHead/>
-      <About/>
-      <Register/>
-      <Login/>
-      <Profile/>
-      <Sidebar/>
-      <Complaint />
-      <Expenditure />
-      <Committee/>
-      <Announcement/>
-      <Bills />
+    <div className={styles.container}>
+      <div className={styles.sidebar}>
+      <Sidebar setPage={setPage}/>
+      </div>
+      <div className={styles.home}>
+     {page==="Home"&&<AnnouncementHead/>}
+     {page==="Home"&&<About/>}
+     {page==="Home"&&<Complaint/>}
+     {page==="Complaint"&&<Complaint/>}
+     {page==="Home"&&<Committee/>}
+      {page==="Expenditure"&&<Expenditure/>}
+      {page==="Announcement"&&<Announcement/>}
+      {page==="Home" && <Bills />}
+      </div>
+      <div className={styles.profile}>
+      {login?<Profile/>:<Login setLogin={setLogin}/>}
+      </div>
+     
       { contact.map((data,index)=><p key={index}>{data.name} {data.email} { data.message}</p>)}
     </div>
   );

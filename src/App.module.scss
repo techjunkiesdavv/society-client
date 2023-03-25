@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    
+    .sidebar{
+        width: 9%;
+        position: fixed;
+        left: 0;
+    }
+   .home{
+    margin-left: 9%;
+    margin-right: 23%;
+    width: 68%;
+   }
+   .profile{
+    position: fixed;
+    overflow-y: scroll;
+    max-height: 100%;
+    right: 0;
+    width: 23%;
+   }
+}
