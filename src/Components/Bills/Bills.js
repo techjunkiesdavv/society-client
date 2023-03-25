@@ -47,7 +47,7 @@ const Bills = () => {
           return images.lightning;
         case "Gas":
           return images.fire ;
-        Default: return "-1"
+        default : return "-1" ;
       }
     }
   }
