@@ -46,7 +46,8 @@ const Bills = () => {
         case "Electricity":
           return images.lightning;
         case "Gas":
-          return images.fire;
+          return images.fire ;
+        Default: return "-1"
       }
     }
   }
