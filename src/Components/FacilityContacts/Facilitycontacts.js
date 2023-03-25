@@ -18,7 +18,7 @@ const Facilitycontacts = () => {
             [
                 {
                     title: "Electrician",
-                    src: electricianimg,
+                    src: electricianimg
                 },
                 [{
                     name: 'Ram Gupta',
@@ -93,8 +93,7 @@ const Facilitycontacts = () => {
                     charge: '200',
                     src: cableimg1
                 }]
-            ],
-            , [
+            ], [
                 {
                     title: "Carpenter",
                     src: carpenterimg,
@@ -126,17 +125,17 @@ const Facilitycontacts = () => {
             <h1 className={contacts.heading}>FACILITY CONTACTS</h1>
             <div className={contacts.job}>
                 {
-                    facilities.map((val,i) => (
-                            <>
-                                <div className={contacts.jobheading} key={`${contacts.jobheading} ${i}`}> 
+                    facilities.map((val,i) => {return(
+                            <div key={i}>
+                                <div className={contacts.jobheading} > 
                                     <img src={val[0].src} alt='job' />
                                     <h1 className={contacts.jobhead}>{val[0].title}</h1>
                                 </div>
                                 <div className={contacts.cards}>
                                     {
-                                        val[1].map((x, i) => {
-                                            return (
-                                                <div className={contacts.card} key={`item-${i}`}>
+                                        val[1].map((x, j) => {return(
+                                            <div key={j}>
+                                                <div className={contacts.card} >
                                                     <img src={x.src} alt='' className={contacts.profileimg} />
                                                     <h3 className={contacts.name}>{x.name}</h3>
                                                     <div className={contacts.line1}>
@@ -160,14 +159,16 @@ const Facilitycontacts = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            );
-                                        })
+                                            </div>
+                                        )    
+                                    })
                                     
                                     }
                                 </div>
                                 <hr className={contacts.hr}/>
-                            </>
+                            </div>
                         )
+                    }
                     )}
             </div>
 
