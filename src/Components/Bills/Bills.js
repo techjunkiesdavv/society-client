@@ -96,7 +96,7 @@ const Bills = () => {
           {data.map((item, index) => (
             <div className={styles.row} key={index}>
               <span>
-                <img src={getFirstWord(item.Name)} />
+                <img src={getFirstWord(item.Name)} alt='' />
                 {item.Name}
               </span>
               <span>{item.Amount}</span>

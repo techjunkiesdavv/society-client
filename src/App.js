@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div>
-      {/* <AnnouncementHead/>
+      <AnnouncementHead/>
       <About/>
       <Register/>
       <Login/>
@@ -27,7 +27,7 @@ function App() {
       <Complaint />
       <Expenditure />
       <Committee/>
-      <Announcement/> */}
+      <Announcement/>
       <Bills />
       { contact.map((data,index)=><p key={index}>{data.name} {data.email} { data.message}</p>)}
     </div>
