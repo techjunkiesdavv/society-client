@@ -1,9 +1,8 @@
-import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Announcement,AnnouncementHead} from "./Components";
+import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Announcement,AnnouncementHead,Facilitycontacts} from "./Components";
 import './App.css';
 import styles from './App.module.scss';
 import { useEffect, useState } from "react";
 import { fetchData } from "./api/fetch";
-
 
 // check fetch
 
@@ -30,6 +29,7 @@ function App() {
      {page==="Home"&&<Committee/>}
       {page==="Expenditure"&&<Expenditure/>}
       {page==="Announcement"&&<Announcement/>}
+      {page==="Facility Contact"&&<Facilitycontacts/>}
       {/* <Register/> */}
       </div>
       <div className={styles.profile}>
