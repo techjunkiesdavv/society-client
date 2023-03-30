@@ -1,16 +1,10 @@
 import React from 'react'
 import contacts from './facilitycontacts.module.scss';
 import electricianimg from '../../assets/electrician.svg';
-import plumberimg from '../../assets/plumber.svg';
-import cableimg from '../../assets/cable.svg';
-import carpenterimg from '../../assets/carpenter.svg';
 import callicon from '../../assets/callfc.svg';
 import star from '../../assets/star.svg';
 import rupee from '../../assets/rupee.svg';
 import electricianimg1 from '../../assets/electrician1.png';
-import plumberimg1 from '../../assets/plumber1.png';
-import cableimg1 from '../../assets/cable1.png';
-import carpenterimg1 from '../../assets/carpenter1.png';
 
 const Facilitycontacts = () => {
     const facilities =
