@@ -8,5 +8,22 @@ import Committee from "./CommitteeMembers/CommitteeMember"
 import Announcement from "./Announcement/Announcement"
 import Register from "./Register/Register";
 import AnnouncementHead from "./AnnouncementHead/AnnouncementHead";
-export {AnnouncementHead,Complaint,About,Login,Profile,Sidebar,Expenditure,Committee,Announcement,Register};
+import Bills from "./Bills/Bills";
+import Facilitycontacts from './FacilityContacts/Facilitycontacts.js'
+
+export {
+  AnnouncementHead,
+  Complaint,
+  About,
+  Login,
+  Profile,
+  Sidebar,
+  Expenditure,
+  Committee,
+  Announcement,
+  Register,
+  Bills,
+  Facilitycontacts
+  
+};
 

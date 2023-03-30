@@ -1,10 +1,6 @@
 .loginpage {
-    margin-right: 0%;
-    padding-right: 0%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #F0EDE2;
-    width: 100%;
-    max-width: 350px;
     box-sizing: border-box;
     border: 1px solid #BABABA;
     display: flex;
@@ -12,12 +8,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    float: right;
-    z-index: 10;
     .form {
-
         input[type="checkbox"] {
-            /* Hide the default checkbox */
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -30,7 +22,6 @@
             }
           }
           
-          /* Create the custom checkbox shape */
           input[type="checkbox"]::before {
             content: "";
             display: inline-block;
@@ -43,16 +34,14 @@
             transition: all 0.3s ease-in-out;
           }
           
-          /* Change the checkbox color when checked */
           input[type="checkbox"]:checked::before {
             background-color: #EF504D;
             border-color: #EF504D;
             content: "\1F5F8";
             ::-ms-ticks-after{
                 color: white;
-                
-            }
-            
+ 
+            }     
           }
 
         height: 60%;
@@ -70,11 +59,11 @@
 
         .logo{
             
-            width: 40%;
-            height: 40%;
+            width: 8rem;
+            height: 8rem;
             box-sizing: border-box;
             border: 1px solid #BABABA;
-            border-radius: 8%;
+            border-radius:1rem;
         }
 
         .head{
@@ -82,7 +71,7 @@
             font-weight: 600;
             font-size: 1.25rem;
             letter-spacing: 0.1rem;
-            padding-top: 8%;
+            padding-top: 1rem;
         }
 
         .emailinfo{
@@ -95,7 +84,7 @@
             border-left: none;
             border-right: none;
             border-top: none;
-            padding-top: 20%;
+            padding-top: 3rem;
 
             .email{
                 font-family: 'Jost', sans-serif ;
@@ -111,8 +100,8 @@
             }
 
             .emailimg{
-                width: 7%;
-                height: 70%;
+                width: 2rem;
+                height: 3rem;
             }
         }
 
@@ -126,7 +115,7 @@
             border-left: none;
             border-right: none;
             border-top: none;
-            padding-top: 6%;
+            padding-top: 1rem;
 
             .pass{
                 font-family: 'Jost', sans-serif ;
@@ -138,58 +127,56 @@
                 width:100%;
                 letter-spacing: 0.1rem;
                 background: transparent;
-                padding-left:1rem;
-                
+                padding-left:1rem;     
             }
 
-
             .passimg{
-                width: 8%;
-                height: 60%;
+                width: 2rem;
+                height: 3rem;
             }
 
             .eyeopen{
-                width:6%;
-                height: 50%;
+                width:2rem;
+                height: 3rem;
             }
 
             .eyeopen:hover{
                 cursor: pointer;
             }
         }
+
         .wrapper{
             display: flex; 
             flex-direction: row;
-            margin-top: 5%;
+            margin-top: 1rem;
             width: 100%;
             justify-content: space-between;
-        .remember{
-            display: flex;
-            flex-direction: row;
-            align-self: flex-start;
-            margin-bottom: 10px;
-
-            .remembertext{
-                font-family: 'Jost', sans-serif ;
-                font-weight: 300;
-                font-size: 1rem;
-                letter-spacing: 0.05rem;
-                padding-left: 0.4rem;
-            }
-
             
-                .remembercheck{
+            .remember{
+                display: flex;
+                flex-direction: row;
+                align-self: flex-start;
+                white-space: nowrap;
+
+                .remembertext{
+                    font-family: 'Jost', sans-serif ;
+                    font-weight: 300;
+                    font-size: 1rem;
+                    letter-spacing: 0.05rem;
+                    padding-left: 0.4rem;
+                }
+
+                .remembercheck{    
                     margin-top:4rem;
                 }
-        
-        }
+            }
 
         .forgot{
             font-family: 'Jost', sans-serif ;
-                font-weight: 300;
-                font-size: 1rem;
-                letter-spacing: 0.05rem;
-               
+            font-weight: 300;
+            font-size: 1rem;
+            letter-spacing: 0.05rem;
+            white-space: nowrap;     
         }
 
         .forgot:hover{
@@ -197,17 +184,15 @@
             text-decoration: underline;
         }
 
-        @media screen and (max-width:768px) {
-         
+        @media screen and (max-width:420px) {
             flex-direction: column;
-
         }
     }
 
         .loginbtn{
-            width:150px ;
-            height: 60px;
-            padding: 2%;
+            width:50% ;
+            height: 3rem;
+            align-items: center;
             border: none;
             background-color: #EF504D;
             border-radius: 3rem;
@@ -215,7 +200,7 @@
             color: white;
             font-family: 'Jost', sans-serif ;
             font-size: 1rem;
-            margin-top: 20%;
+            margin-top: 3rem;
 
             &:hover {
                 background-color: #e04a48;
@@ -227,9 +212,9 @@
         .register{
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            margin-top: 10%;
+            margin-top: 1rem;
             width: 100%;
 
             .text1{
@@ -244,16 +229,13 @@
                 font-size: 1rem;
                 color:#EF504D;
                 font-weight: bold;
+                padding-left: 0.5rem;
             }
 
             .text2:hover{
                 cursor: pointer;
                 text-decoration: underline;
             }
-        }
-
-
-
-        
+        }  
     }
 } 

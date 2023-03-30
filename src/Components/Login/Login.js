@@ -7,7 +7,7 @@ import eyeclose from '../../assets/hide.svg';
 import lock from '../../assets/passw.svg';
 // images folder after merge
 
-const Login = () => {
+const Login = (props) => {
   const [showpassword, setshowpassword]=useState(false);
   const [email,setEmail] = useState('') ;
   const [password,setPassword] = useState('') ;
@@ -26,7 +26,7 @@ const Login = () => {
     }
 
     const handleLogin =(e)=>{
-        
+      props.setLogin(true);
       setIsLogin(true) ;
         e.preventDefault() ;
       
