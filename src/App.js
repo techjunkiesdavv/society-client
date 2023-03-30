@@ -1,5 +1,4 @@
-import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Announcement,AnnouncementHead, Bills} from "./Components";
-import './App.css';
+import { Facilitycontacts,Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Announcement,AnnouncementHead, Bills} from "./Components";
 import styles from './App.module.scss';
 import { useEffect, useState } from "react";
 import { fetchData } from "./api/fetch";
@@ -31,6 +30,7 @@ function App() {
       {page==="Expenditure"&&<Expenditure/>}
       {page==="Announcement"&&<Announcement/>}
       {page==="Home" && <Bills />}
+      { page === "Home" && <Facilitycontacts />}
       </div>
       <div className={styles.profile}>
       {login?<Profile/>:<Login setLogin={setLogin}/>}

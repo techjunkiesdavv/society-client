@@ -9,6 +9,7 @@ import Announcement from "./Announcement/Announcement"
 import Register from "./Register/Register";
 import AnnouncementHead from "./AnnouncementHead/AnnouncementHead";
 import Bills from "./Bills/Bills";
+import Facilitycontacts from './FacilityContacts/Facilitycontacts.js'
 
 export {
   AnnouncementHead,
@@ -21,6 +22,8 @@ export {
   Committee,
   Announcement,
   Register,
-  Bills
+  Bills,
+  Facilitycontacts
+  
 };
 
