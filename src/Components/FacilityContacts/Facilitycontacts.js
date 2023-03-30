@@ -1,38 +1,20 @@
 import React from 'react'
 import contacts from './facilitycontacts.module.scss';
 import electricianimg from '../../assets/electrician.svg';
-import plumberimg from '../../assets/plumber.svg';
-import cableimg from '../../assets/cable.svg';
-import carpenterimg from '../../assets/carpenter.svg';
 import callicon from '../../assets/callfc.svg';
 import star from '../../assets/star.svg';
 import rupee from '../../assets/rupee.svg';
 import electricianimg1 from '../../assets/electrician1.png';
-import plumberimg1 from '../../assets/plumber1.png';
-import cableimg1 from '../../assets/cable1.png';
-import carpenterimg1 from '../../assets/carpenter1.png';
 
 const Facilitycontacts = () => {
     const facilities =
         [
-            [
+            
                 {
                     title: "Electrician",
-                    src: electricianimg
-                },
-                [{
-                    name: 'Ram Gupta',
-                    phone: '+913332456337',
-                    rating: '3.5',
-                    charge: '200',
-                    src: electricianimg1
-                }, {
-                    name: 'Suraj Sharma',
-                    phone: '+913332456337',
-                    rating: '3.5',
-                    charge: '200',
-                    src: electricianimg1
-                }, {
+                    src: electricianimg,
+                    employees: [
+                     {
                     name: 'Ramesh Gautam',
                     phone: '+913332456337',
                     rating: '3.5',
@@ -45,79 +27,9 @@ const Facilitycontacts = () => {
                     charge: '200',
                     src: electricianimg1
                 }]
-            ], [
-                {
-                    title: "Plumber",
-                    src: plumberimg,
                 },
-                [{
-                    name: 'Ram Gupta',
-                    phone: '+913332456337',
-                    rating: '3.5',
-                    charge: '200',
-                    src: plumberimg1
-                }, {
-                    name: 'Suraj Sharma',
-                    phone: '+913332456337',
-                    rating: '3.5',
-                    charge: '200',
-                    src: plumberimg1
-                }, {
-                    name: 'Ramesh Gautam',
-                    phone: '+913332456337',
-                    rating: '3.5',
-                    charge: '200',
-                    src: plumberimg1
-                }, {
-                    name: 'Prem Sahu',
-                    phone: '+913332456337',
-                    rating: '3.5',
-                    charge: '200',
-                    src: plumberimg1
-                }]
-            ], [
-                {
-                    title: "Cable Operator",
-                    src: cableimg,
-                },
-                [{
-                    name: 'Ram Gupta',
-                    phone: '+913332456337',
-                    rating: '3.5',
-                    charge: '200',
-                    src: cableimg1
-                }, {
-                    name: 'Suraj Sharma',
-                    phone: '+913332456337',
-                    rating: '3.5',
-                    charge: '200',
-                    src: cableimg1
-                }]
-            ], [
-                {
-                    title: "Carpenter",
-                    src: carpenterimg,
-                },
-                [{
-                    name: 'Ram Gupta',
-                    phone: '+913332456337',
-                    rating: '3.5',
-                    charge: '200',
-                    src: carpenterimg1
-                }, {
-                    name: 'Suraj Sharma',
-                    phone: '+913332456337',
-                    rating: '3.5',
-                    charge: '200',
-                    src: carpenterimg1
-                }, {
-                    name: 'Ramesh Gautam',
-                    phone: '+913332456337',
-                    rating: '3.5',
-                    charge: '200',
-                    src: carpenterimg1
-                }]
-            ]
+    
+            
         ];
 
     return (
@@ -128,12 +40,12 @@ const Facilitycontacts = () => {
                     facilities.map((val,i) => {return(
                             <div key={i}>
                                 <div className={contacts.jobheading} > 
-                                    <img src={val[0].src} alt='job' />
-                                    <h1 className={contacts.jobhead}>{val[0].title}</h1>
+                                    <img src={val.src} alt='job' />
+                                    <h1 className={contacts.jobhead}>{val.title}</h1>
                                 </div>
                                 <div className={contacts.cards}>
                                     {
-                                        val[1].map((x, j) => {return(
+                                        val.employees.map((x, j) => {return(
                                             <div key={j}>
                                                 <div className={contacts.card} >
                                                     <img src={x.src} alt='' className={contacts.profileimg} />
