@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles.scss";
 import { images } from "../../constants";
+import AnnouncementCard from "./AnnouncementCard";
 
 const Announcement = () => {
   function GridItem({ item }) {
@@ -90,13 +91,14 @@ const Announcement = () => {
 
   return (
     <div className="container">
+
       <div className="heading">
         <img src={images.announce} alt="Announcemnt" />
         <span className="head">ANNOUNCEMENT</span>
       </div>
       <div className="grid-container">
         {data.map((item) => (
-          <GridItem key={item.id} item={item} />
+          <AnnouncementCard item={item}  key={item.id} data-id={item.id}/>
         ))}
       </div>
     </div>

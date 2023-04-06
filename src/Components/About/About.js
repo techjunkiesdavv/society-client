@@ -24,22 +24,22 @@ const About = () => {
           <div className={styles.block1}>
             <span className={styles.imgicon}>
               <img src={images.building} alt="" />
-            </span>
-            8<div>Wings</div>
+           8 </span>
+            <div>Wings</div>
           </div>
           <div className={styles.line}></div>
           <div className={styles.block2}>
             <span className={styles.imgicon}>
               <img src={images.group} alt="" />
-            </span>
-            2500<div>Members</div>
+            2500</span>
+            <div>Members</div>
           </div>
           <div className={styles.line}></div>
           <div className={styles.block3}>
             <span className={styles.imgicon}>
               <img src={images.flat} alt="" />
-            </span>
-            126<div>Flat</div>
+            126</span>
+            <div>Flat</div>
           </div>
         </div>
       </div>
