@@ -4,40 +4,7 @@ import { images } from "../../constants";
 import AnnouncementCard from "./AnnouncementCard";
 
 const Announcement = () => {
-  function GridItem({ item }) {
-    const [showFullDesc, setShowFullDesc] = useState(false);
 
-    function handleClick() {
-      setShowFullDesc(!showFullDesc);
-    }
-
-    const hoverStyle = {
-      cursor: "pointer",
-    };
-
-    return (
-      <div className="grid-item">
-        {(date1 - new Date(item.date)) / 1000000 <= 1296 ? (
-          <div className="newButton">New</div>
-        ) : (
-          <div className="emptyButton"></div>
-        )}
-        <div className="grid-item-date">{formatDate(item.date)}</div>
-        <p className="grid-item-title">{item.title}</p>
-        <p
-          className="grid-item-description"
-          onClick={handleClick}
-          style={item.desc.length > 200 ? hoverStyle : null}
-        >
-          {showFullDesc
-            ? item.desc
-            : item.desc.length <= 200
-            ? item.desc
-            : item.desc.substring(0, 200) + "....."}
-        </p>
-      </div>
-    );
-  }
 
   function formatDate(date) {
     const options = { month: "long", day: "numeric", year: "numeric" };

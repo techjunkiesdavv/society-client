@@ -1,6 +1,5 @@
-import React,{useState} from 'react'
+import React from 'react'
 import  './styles.scss';
-import featuresData from '../../constants/index'
 import FeatureCard from './FeatureCard';
 
 import { images } from "../../constants";
