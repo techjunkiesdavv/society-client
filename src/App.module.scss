@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    
+    .sidebar{
+        width: 10%;
+        position: fixed;
+        left: 0;
+        @media screen and (max-width:1024px)  {
+           // display: none;
+            width: 20%;
+        }
+        @media screen and (max-width:420px)  {
+            display: none;
+            
+         }
+    }
+   .home{
+    margin-left: 10%;
+    margin-right: 23%;
+    width: 67%;
+    overflow: scroll;
+    @media screen and (max-width:1024px)  {
+        width: 80%;
+        margin-right: 0%;
+        margin-left: 20%;
+    }
+    @media screen and (max-width:420px)  {
+        width: 100%;
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+   }
+   .profile{
+    position: fixed;
+    overflow-y: scroll;
+    max-height: 100%;
+    right: 0;
+    width: 23%;
+    @media screen and (max-width:1024px)  {
+        display: none;
+    }
+   }
+}

@@ -2,10 +2,11 @@ import React from "react";
 import { useState } from "react";
 import "./Sidebar.scss";
 import SidebarData from "./SidebarData";
-export default function Sidebar() {
+export default function Sidebar(props) {
   const [activeElement, setactiveElement] = useState("home");
   const handleActiveElement = (element) => {
     setactiveElement(element);
+    props.setPage(element);
   };
   return (
     <div className="Sidebar">
