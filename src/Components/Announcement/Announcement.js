@@ -9,7 +9,7 @@ const Announcement = () => {
     function handleClick() {
       setShowFullDesc(!showFullDesc);
     }
-
+    
     const hoverStyle = {
       cursor: "pointer",
     };

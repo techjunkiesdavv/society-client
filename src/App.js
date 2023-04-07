@@ -10,6 +10,7 @@ import {
   AnnouncementHead,
   Facilitycontacts,
   Bills,
+  Register,
 } from "./Components";
 import "./App.module.scss";
 import styles from "./App.module.scss";
@@ -23,7 +24,7 @@ function App() {
 
   // text for queries are:-
 
-  //     contact
+
   // expenditure
   // committe_members
   // about
@@ -32,7 +33,7 @@ function App() {
   // bills
 
   useEffect(() => {
-    fetchData("expenditure").then((data) => setContact(data));
+    fetchData("about").then((data) => setContact(data));
   }, []);
 
   console.log(contact);
@@ -54,7 +55,7 @@ function App() {
         {page === "Home" && <Bills />}
         {page === "Home" && <Facilitycontacts />}
         {page === "Facility Contact" && <Facilitycontacts />}
-        {/* <Register/> */}
+        <Register/>
       </div>
       <div className={styles.profile}>
         {login ? <Profile /> : <Login setLogin={setLogin} />}
