@@ -19,9 +19,7 @@ function App() {
   return (
     <div>
         <About/>
-      <Feature/>
-      
-      <Announcement/> 
+        <Feature/>
       
       <AnnouncementHead/>
     
@@ -32,7 +30,9 @@ function App() {
       <Complaint />
       <Expenditure />
   <Committee/>
+
       
+      <Announcement/> 
       { contact.map((data,index)=><p key={index}>{data.name} {data.email} { data.message}</p>)}
     </div>
   );
