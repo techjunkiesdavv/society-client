@@ -1,17 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles.scss";
 import { images } from "../../constants";
 import AnnouncementCard from "./AnnouncementCard";
 
 const Announcement = () => {
-
-
-  function formatDate(date) {
-    const options = { month: "long", day: "numeric", year: "numeric" };
-    return new Date(date).toLocaleDateString("en-US", options);
-  }
-
-  const date1 = new Date("2023-03-20T00:00:00.000Z");
 
   const data = [
     {
