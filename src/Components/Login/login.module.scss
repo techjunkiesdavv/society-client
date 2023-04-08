@@ -89,7 +89,7 @@
             .email{
                 font-family: 'Jost', sans-serif ;
                 font-weight: 300;
-                font-size: 1.1rem;
+                font-size: 0.9rem;
                 border: none;
                 padding: 0.5rem;
                 outline: none;
@@ -100,8 +100,8 @@
             }
 
             .emailimg{
-                width: 2rem;
-                height: 3rem;
+                width: 1.5rem;
+                height: 2rem;
             }
         }
 
@@ -120,7 +120,7 @@
             .pass{
                 font-family: 'Jost', sans-serif ;
                 font-weight: 300;
-                font-size: 1.1rem;
+                font-size: 0.9rem;
                 border: none;
                 padding: 0.5rem;
                 outline: none;
@@ -131,13 +131,13 @@
             }
 
             .passimg{
-                width: 2rem;
-                height: 3rem;
+                width: 1.5rem;
+                height: 2rem;
             }
 
             .eyeopen{
-                width:2rem;
-                height: 3rem;
+                width:1.5rem;
+                height: 2rem;
             }
 
             .eyeopen:hover{
@@ -151,6 +151,11 @@
             margin-top: 1rem;
             width: 100%;
             justify-content: space-between;
+
+            // @media (max-width: 1290px) {
+            //     flex-direction: column;
+            //     gap: 0.5rem;
+            // }
             
             .remember{
                 display: flex;
@@ -161,7 +166,7 @@
                 .remembertext{
                     font-family: 'Jost', sans-serif ;
                     font-weight: 300;
-                    font-size: 1rem;
+                    font-size: 0.85rem;
                     letter-spacing: 0.05rem;
                     padding-left: 0.4rem;
                 }
@@ -174,7 +179,7 @@
         .forgot{
             font-family: 'Jost', sans-serif ;
             font-weight: 300;
-            font-size: 1rem;
+            font-size: 0.85rem;
             letter-spacing: 0.05rem;
             white-space: nowrap;     
         }
@@ -183,6 +188,8 @@
             cursor: pointer;
             text-decoration: underline;
         }
+
+        
 
         @media screen and (max-width:420px) {
             flex-direction: column;
@@ -221,6 +228,7 @@
                 font-family: 'Jost', sans-serif ;
                 font-weight: 300;
                 font-size: 1rem;
+                white-space: nowrap;
             }
             
             .text2{
@@ -230,6 +238,7 @@
                 color:#EF504D;
                 font-weight: bold;
                 padding-left: 0.5rem;
+                white-space: nowrap;
             }
 
             .text2:hover{
