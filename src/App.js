@@ -1,4 +1,4 @@
-import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Announcement,AnnouncementHead,Facilitycontacts ,Bills} from "./Components";
+import { Footer, Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Announcement,AnnouncementHead,Facilitycontacts ,Bills} from "./Components";
 import './App.module.scss';
 import styles from './App.module.scss';
 import { useEffect, useState } from "react";
@@ -40,7 +40,9 @@ function App() {
       </div>
      
       { contact.map((data,index)=><p key={index}>{data.name} {data.email} { data.message}</p>)}
+     
     </div>
+     
   );
 }
 export default App;
