@@ -11,6 +11,7 @@ import AnnouncementHead from "./AnnouncementHead/AnnouncementHead";
 import Bills from "./Bills/Bills";
 import Feature from "./Feature/Feature";
 import Facilitycontacts from './FacilityContacts/Facilitycontacts.js'
+import Footer from './Footer/Footer.js'
 
 export {
   AnnouncementHead,
@@ -25,7 +26,7 @@ export {
   Register,
   Bills,
   Facilitycontacts,
-  Feature
-  
+  Feature,
+  Footer,  
 };
 

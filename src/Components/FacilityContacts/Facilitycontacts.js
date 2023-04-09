@@ -12,6 +12,8 @@ import plumberimg1 from '../../assets/plumber1.png';
 import cableimg1 from '../../assets/cable1.png';
 import carpenterimg1 from '../../assets/carpenter1.png';
 
+import {Footer} from '../index.js';
+
 const Facilitycontacts = () => {
     const facilities =
         [
@@ -170,7 +172,7 @@ const Facilitycontacts = () => {
                         )
                     )}
             </div>
-
+            <Footer/>
         </div>
     )
 }

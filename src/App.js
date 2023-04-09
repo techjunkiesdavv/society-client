@@ -51,6 +51,7 @@ function App() {
 
       {/* { contact.map((data,index)=><p key={index}>{data.name} {data.email} { data.message}</p>)} */}
     </div>
+     
   );
 }
 export default App;
