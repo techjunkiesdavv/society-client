@@ -1,30 +1,43 @@
 .container {
-    margin:0%;
-    padding: 0%;
     height: 100vh;
-    background-color: #F0EDE2;
+    background-color: #0A0909;
     display: flex;
     position: relative;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-
+    justify-content: space-between;
+    padding: 5% 3%;
+    padding-bottom: 0%;
+    
+    .heading{
+    //    align-self: flex-start;
+        color: #EFEFEF;
+    .head {
+        font-size: 2rem;
+        width: 100%;
+        line-height: 2rem;
+        font-family: 'Merriweather', serif;
+        padding: .5rem;
+        font-weight: 700;
+    }
+    .head2{
+        font-size: 2rem;
+        width: 100%;
+        line-height: 2rem;
+        font-family: 'Merriweather', serif;
+        padding: .5rem;
+        font-weight: 700;
+    }
+}
     .form {
+       
         height: 80%;
-        width: 70%;
+        width: 60%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-
-        .head {
-            font-size: 2rem;
-            width: 100%;
-            line-height: 2rem;
-            font-family: 'Merriweather', serif;
-            padding: 1rem;
-            font-weight: 700;
-        }
+        margin: 0rem 2rem;
+        
 
         .input {
             font-family: 'Jost', sans-serif;
@@ -40,7 +53,6 @@
         }
 
         .textarea {
-
             font-family: 'Jost', sans-serif;
             width: 100%;
             line-height: 2rem;
@@ -56,17 +68,15 @@
         }
 
         .btn {
-
-            width: 250px;
-            border-radius: 25px;
-            background-color: #EF504D;
+           
+            border-radius: 2px;
+            background-color: #0A0909;
             margin-top: 5%;
-            border: none;
-            color: #fff;
-            padding: 10px;
+            border: .8px solid #EFEFEF;
+            color: #EFEFEF;
+            padding: .8rem 5rem;
             font-size: 1.2rem;
-            font-weight: bold;
-
+            font-weight: 700;
             &:hover {
                 background-color: #e04a48;
             }

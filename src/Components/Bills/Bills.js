@@ -63,7 +63,7 @@ const Bills = () => {
             </div>
             <div className={styles.right}>
               <h1>11</h1>
-              <h4 className={styles.text}>Pending Bills</h4>
+              <p className={styles.text}>Pending Bills</p>
             </div>
           </div>
           <div className={styles.card}>
@@ -72,7 +72,7 @@ const Bills = () => {
             </div>
             <div className={styles.right}>
               <h1>11</h1>
-              <h4 className={styles.text}>Pending Bills</h4>
+              <p className={styles.text}>Pending Bills</p>
             </div>
           </div>
           <div className={styles.card}>
@@ -81,7 +81,7 @@ const Bills = () => {
             </div>
             <div className={styles.right}>
               <h1>11</h1>
-              <h4 className={styles.text}>Pending Bills</h4>
+              <p className={styles.text}>Pending Bills</p>
             </div>
           </div>
         </div>

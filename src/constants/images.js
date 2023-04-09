@@ -1,7 +1,7 @@
 import building from '../assets/building.png';
 import group from '../assets/group.png';
 import flat from '../assets/flat.png';
-import announce from '../assets/announce.png';
+import announce from '../assets/announce.svg';
 
 import history from '../assets/history.png';
 import complaint from '../assets/complaint.png';

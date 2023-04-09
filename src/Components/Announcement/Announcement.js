@@ -10,55 +10,55 @@ const Announcement = () => {
       date: "2023-03-20T00:00:00.000Z",
       title: "Society Meeting",
       desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
+      key : "1"
     },
     {
       date: "2023-03-20T00:00:00.000Z",
       title: "Society Meeting",
       desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
+      key :"2"
     },
     {
       date: "2023-03-19T00:00:00.000Z",
       title: "Society Meeting",
       desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-    },
-    {
+      key:"3"
+    }, {
       date: "2023-03-19T00:00:00.000Z",
       title: "Society Meeting",
       desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-    },
-    {
+      key:"3"
+    }, {
       date: "2023-03-19T00:00:00.000Z",
       title: "Society Meeting",
       desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-    },
-    {
-      date: "2023-03-04T00:00:00.000Z",
+      key:"3"
+    }, {
+      date: "2023-03-19T00:00:00.000Z",
       title: "Society Meeting",
       desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-    },
-    {
-      date: "2023-03-01T00:00:00.000Z",
+      key:"3"
+    }, {
+      date: "2023-03-19T00:00:00.000Z",
       title: "Society Meeting",
       desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
+      key:"3"
     },
-    {
-      date: "2023-02-01T00:00:00.000Z",
-      title: "Society Meeting",
-      desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-    },
+   
   ];
-
+  
   return (
     <div className="container">
-
       <div className="heading">
         <img src={images.announce} alt="Announcemnt" />
         <span className="head">ANNOUNCEMENT</span>
       </div>
       <div className="grid-container">
-        {data.map((item) => (
-          <AnnouncementCard item={item}  key={item.id} data-id={item.id}/>
-        ))}
+        {data.map((item,i) => {
+          console.log(i);
+          return(
+          <AnnouncementCard item={item}  key={i}  data-id={item.id} />
+        )})}
       </div>
     </div>
   );

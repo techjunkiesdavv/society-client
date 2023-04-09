@@ -1,15 +1,9 @@
-import React,{useState} from 'react'
+import React from 'react'
 
 const AnnouncementCard = ({item}) => {
-    const [showFullDesc, setShowFullDesc] = useState(false);
-
-    function handleClick() {
-      setShowFullDesc(!showFullDesc);
-    }
-
-    const hoverStyle = {
-      cursor: "pointer",
-    };
+    // const hoverStyle = {
+    //   cursor: "pointer",
+    // };
     function formatDate(date) {
         const options = { month: "long", day: "numeric", year: "numeric" };
         return new Date(date).toLocaleDateString("en-US", options);
@@ -26,15 +20,10 @@ const AnnouncementCard = ({item}) => {
         <div className="grid-item-date">{formatDate(item.date)}</div>
         <p className="grid-item-title">{item.title}</p>
         <p
-          className="grid-item-description"
-          onClick={handleClick}
-          style={item.desc.length > 200 ? hoverStyle : null}
+          className="grid-item-description ellipsis"
+          onClick={(element)=>{element.currentTarget.classList.remove("ellipsis")}}
         >
-          {showFullDesc
-            ? item.desc
-            : item.desc.length <= 200
-            ? item.desc
-            : item.desc.substring(0, 200) + "....."}
+          {item.desc}
         </p>
       </div>
     );
