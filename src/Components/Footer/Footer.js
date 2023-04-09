@@ -33,7 +33,7 @@ const Footer = () => {
                 info.map((val,i) => {return(
                     <div key={i}>
                         <div className={styles.societyinfo}>
-                            <img src={val.img}/>
+                            <img src={val.img} alt="icon"/>
                             <div className={styles.address}>{val.desc}</div>
                         </div>
                     </div>
