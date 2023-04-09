@@ -1,4 +1,4 @@
-import { Footer, Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Announcement,AnnouncementHead,Facilitycontacts ,Bills} from "./Components";
+import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Announcement,AnnouncementHead,Facilitycontacts ,Bills} from "./Components";
 import './App.module.scss';
 import styles from './App.module.scss';
 import { useEffect, useState } from "react";

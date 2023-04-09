@@ -1,11 +1,12 @@
+::-webkit-input-placeholder{
+    color: white;
+}
 .loginpage {
     min-height: 100vh;
-    background-color: #F0EDE2;
+    background-color: #0A0909;
     box-sizing: border-box;
     border: 1px solid #BABABA;
     display: flex;
-    position: relative; 
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     .form {
@@ -29,45 +30,37 @@
             height: 0.75rem;
             border-radius: 0px;
             background-color: transparent;
-            border: 1.5px solid #000;
+            border: 1.5px solid #fff;
             margin-top:0.18rem;
             transition: all 0.3s ease-in-out;
           }
           
           input[type="checkbox"]:checked::before {
-            background-color: #EF504D;
-            border-color: #EF504D;
+            background-color: #FFDF8D;
+            border-color: #FFDF8D;
             content: "\1F5F8";
             ::-ms-ticks-after{
                 color: white;
  
             }     
           }
-
         height: 60%;
         width: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-
         .check{
             font-weight: bold;
-            color: black;
+            color: white;
             font-family: 'Merriweather', serif;
         }
-
-        .logo{
-            
+        .logo{   
             width: 8rem;
             height: 8rem;
             box-sizing: border-box;
-            border: 1px solid #BABABA;
-            border-radius:1rem;
+            border: 1px solid white;
         }
-
         .head{
-            font-family: 'Jost', sans-serif;
             font-weight: 600;
             font-size: 1.25rem;
             letter-spacing: 0.1rem;
@@ -76,29 +69,25 @@
 
         .emailinfo{
             display: flex;
-            flex-direction: row;
             justify-content: center;
             align-items: center;
             width: 100%;
-            border: 1px solid #BABABA;
-            border-left: none;
-            border-right: none;
-            border-top: none;
+            border-bottom: 1px solid white;
             padding-top: 3rem;
-
             .email{
                 font-family: 'Jost', sans-serif ;
                 font-weight: 300;
                 font-size: 0.9rem;
                 border: none;
                 padding: 0.5rem;
+                color: white;
+                
                 outline: none;
                 width:100%;
                 letter-spacing: 0.1rem;
                 background: transparent;
                 padding-left: 1rem;
             }
-
             .emailimg{
                 width: 1.5rem;
                 height: 2rem;
@@ -107,14 +96,10 @@
 
         .passinfo{
             display: flex;
-            flex-direction: row;
             justify-content: center;
             align-items: center;
             width: 100%;
-            border: 1px solid #BABABA;
-            border-left: none;
-            border-right: none;
-            border-top: none;
+            border-bottom: 1px solid white;
             padding-top: 1rem;
 
             .pass{
@@ -125,122 +110,97 @@
                 padding: 0.5rem;
                 outline: none;
                 width:100%;
+                color: white;
                 letter-spacing: 0.1rem;
                 background: transparent;
                 padding-left:1rem;     
             }
-
             .passimg{
                 width: 1.5rem;
                 height: 2rem;
             }
-
             .eyeopen{
                 width:1.5rem;
                 height: 2rem;
             }
-
             .eyeopen:hover{
                 cursor: pointer;
             }
         }
-
         .wrapper{
             display: flex; 
-            flex-direction: row;
             margin-top: 1rem;
             width: 100%;
             justify-content: space-between;
-
-            // @media (max-width: 1290px) {
-            //     flex-direction: column;
-            //     gap: 0.5rem;
-            // }
-            
+            flex-wrap: wrap;
             .remember{
                 display: flex;
-                flex-direction: row;
                 align-self: flex-start;
                 white-space: nowrap;
-
                 .remembertext{
-                    font-family: 'Jost', sans-serif ;
                     font-weight: 300;
                     font-size: 0.85rem;
                     letter-spacing: 0.05rem;
                     padding-left: 0.4rem;
+                    color: white;
                 }
-
                 .remembercheck{    
                     margin-top:4rem;
                 }
             }
-
         .forgot{
-            font-family: 'Jost', sans-serif ;
             font-weight: 300;
             font-size: 0.85rem;
             letter-spacing: 0.05rem;
-            white-space: nowrap;     
+            white-space: nowrap;    
+            margin-left: 1rem; 
+            color: white;
         }
-
         .forgot:hover{
             cursor: pointer;
             text-decoration: underline;
         }
-
-        
-
-        @media screen and (max-width:420px) {
-            flex-direction: column;
-        }
     }
-
         .loginbtn{
             width:50% ;
             height: 3rem;
             align-items: center;
             border: none;
-            background-color: #EF504D;
-            border-radius: 3rem;
+            background-color: transparent;
+            border: .5px solid white;
             font-weight: bold;
             color: white;
-            font-family: 'Jost', sans-serif ;
             font-size: 1rem;
             margin-top: 3rem;
-
             &:hover {
-                background-color: #e04a48;
+                background-color: #FFDF8D;
+                color: black;
+                border: none;
+                transition-delay: 0.1s;
                 cursor: pointer;
             }
-
         }
-
         .register{
             display: flex;
-            flex-direction: row;
             justify-content: center;
             align-items: center;
             margin-top: 1rem;
             width: 100%;
-
+            flex-wrap: wrap;
             .text1{
-                font-family: 'Jost', sans-serif ;
                 font-weight: 300;
-                font-size: 1rem;
+                font-size: 0.9rem;
                 white-space: nowrap;
+                color: white
             }
-            
             .text2{
-                font-family: 'Jost', sans-serif ;
                 font-weight: 300;
-                font-size: 1rem;
-                color:#EF504D;
+                font-size: 0.9rem;
+                color:#FFDF8D;
                 font-weight: bold;
-                padding-left: 0.5rem;
+                padding-left: 0.3rem;
                 white-space: nowrap;
             }
-
             .text2:hover{
                 cursor: pointer;
                 text-decoration: underline;
