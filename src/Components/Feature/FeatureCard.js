@@ -1,34 +1,22 @@
-import React, { useState } from 'react'
+import React from "react";
 
-const FeatureCard = ({item}) => {
-  const [hovered, setHovered] = useState(true);
-
-  const handleMouseOver = () => {
-    
-    setHovered(!hovered);
-    
-  }
-
-  const handleMouseOut = () => {
-    
-    setHovered(!hovered);
-    
-  }
-
+const FeatureCard = ({ item }) => {
   return (
-    <div className="fgrid-item" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-      {hovered ? (
-        <>
+    <div className="flipcard">
+<div className="fgrid-item">
+        <div className="beforehovercard">
           <div className="fgrid-item-img">
-            <img src={item.imgUrl} alt=""/>
+            <img src={item.imgUrl} alt="" />
           </div>
           <p className="fgrid-item-title">{item.title}</p>
-        </>
-      ) : (
+        </div>
+        <div className="flip-card-back">
         <p className="fgrid-item-description">{item.desc}</p>
-      )}
+        </div>
     </div>
-  )
-}
+    </div>
+    
+  );
+};
 
 export default FeatureCard;
