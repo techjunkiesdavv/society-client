@@ -1,12 +1,19 @@
 .profileContainer {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
   background-color: #f0ede2;
   border: 1px solid #bababa;
-  padding: 3rem 0rem;
+  // padding: 3rem 0rem;
+  padding: 5% 0% 5% 0%;
+//   @media screen and (max-width:1224px)  {
+    
+//   padding: 20% 0% 20% 0%;
+// }
+
   button:hover{
     cursor: pointer;
   }
