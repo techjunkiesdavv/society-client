@@ -6,7 +6,6 @@ import eyeopen from '../../assets/show.svg';
 import eyeclose from '../../assets/hide.svg';
 import lock from '../../assets/passw.svg';
 import {  Link } from 'react-router-dom';
-import Profile from '../Profile/Profile'
 
 import { signin } from '../../actions/auth';
 // images folder after merge

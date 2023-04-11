@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './footer.module.scss';
-import footerimg from '../../assets/footerimg.svg';
+import footerimg from '../../assets/footer.png';
 import footermap from '..//..//assets/footermap.svg'
 import footercall from '..//..//assets/footercall.svg'
 import footeremail from '..//..//assets/footeremail.svg'

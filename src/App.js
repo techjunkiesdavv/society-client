@@ -12,6 +12,7 @@ import {
   AnnouncementHead,
   Facilitycontacts,
   Bills,
+  Footer,
 } from "./Components";
 import "./App.module.scss";
 import React from "react";
@@ -64,9 +65,13 @@ const App = () => {
                 <div className={styles.content}>
                   <AnnouncementHead />
                   <About />
-                  <Committee />
                   <Feature />
+                  <Committee />
                   <Complaint />
+                  <Expenditure />
+                  <Announcement />
+                  <Bills/>
+                  <Facilitycontacts />
                 </div>
             
               </React.Fragment>
@@ -84,6 +89,7 @@ const App = () => {
             <Route path="/register" element={ <Register />} />
                 
           </Routes>
+          <Footer/>
         </div>   
          <div className={styles.profile}>
                   { user?<Profile />:<Login settUser={settUser}/>}
