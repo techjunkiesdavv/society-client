@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Register.module.scss";
 import { client } from "../../api/client";
-import { fetchData } from "../../api/fetch";
+// import { fetchData } from "../../api/fetch";
 
 export default function Register() {
   const [firstName, setFirstName] = useState("");
@@ -13,9 +13,17 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [obj, setObj] = useState([]);
-
-  const handleSubmit = (event) => {
+  const checkEmail = async () => {
+    try {
+      const query = `*[_type == "user" && email == "${email}"]`;
+      const data = await client.fetch(query);
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw new Error("Failed to fetch data.");
+    }
+  };
+  const handleSubmit = async(event) => {
     event.preventDefault();
     if (password !== confirmPassword) console.log("password dont match");
     else {
@@ -30,21 +38,8 @@ export default function Register() {
         password,
         allowed: false,
       };
-
-      const checkEmail = async () => {
-        try {
-          const query = `*[_type == "user" && email == "${email}"]`;
-
-          const data = await client.fetch(query);
-          console.log(data);
-          setObj(data);
-        } catch (error) {
-          console.error(error);
-          throw new Error("Failed to fetch data.");
-        }
-      };
-      checkEmail();
-      if (obj.length > 0) {
+      const emailCount = await checkEmail();
+      if (emailCount.length > 0) {
         alert("already exists");
       } else {
         client
@@ -61,7 +56,6 @@ export default function Register() {
       }
     }
   };
-
   return (
     <div>
       <div className={styles.container}>

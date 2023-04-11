@@ -1,19 +1,6 @@
-import {
-  Complaint,
-  Login,
-  About,
-  Profile,
-  Sidebar,
-  Expenditure,
-  Committee,
-  Announcement,
-  AnnouncementHead,
-  Facilitycontacts,
-  Bills,
-  Register,
-} from "./Components";
-import "./App.module.scss";
-import styles from "./App.module.scss";
+import { Complaint,Login,About,Profile,Sidebar,Footer,Expenditure,Committee,Feature,Announcement,AnnouncementHead,Facilitycontacts ,Bills} from "./Components";
+import './App.module.scss';
+import styles from './App.module.scss';
 import { useEffect, useState } from "react";
 import { fetchData } from "./api/fetch";
 
@@ -46,17 +33,19 @@ function App() {
         <Sidebar setPage={setPage} />
       </div>
       <div className={styles.home}>
-        {page === "Home" && <AnnouncementHead />}
-        {page === "Home" && <About />}
-        {page === "Home" && <Complaint />}
-        {page === "Complaint" && <Complaint />}
-        {page === "Home" && <Committee />}
-        {page === "Expenditure" && <Expenditure />}
-        {page === "Announcement" && <Announcement />}
-        {page === "Home" && <Bills />}
-        {page === "Home" && <Facilitycontacts />}
-        {page === "Facility Contact" && <Facilitycontacts />}
-        <Register/>
+     {page==="Home"&&<AnnouncementHead/>}
+     {page==="Home"&&<About/>}
+     {page==="Home"&&<Feature/>}
+     {page==="Home"&&<Complaint/>}
+     {page==="Complaint"&&<Complaint/>}
+     {page==="Home"&&<Committee/>}
+      {page==="Expenditure"&&<Expenditure/>}
+      {page==="Announcement"&&<Announcement/>}
+      {page==="Home" && <Bills />}
+      { page === "Home" && <Facilitycontacts />}
+     {page==="Home"&&<Footer/>}
+      {page==="Facility Contact"&&<Facilitycontacts/>}
+      {/* <Register/> */}
       </div>
       <div className={styles.profile}>
         {login ? <Profile /> : <Login setLogin={setLogin} />}
@@ -64,6 +53,7 @@ function App() {
 
       {/* { contact.map((data,index)=><p key={index}>{data.name} {data.email} { data.message}</p>)} */}
     </div>
+     
   );
 }
 export default App;

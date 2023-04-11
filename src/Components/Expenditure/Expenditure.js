@@ -46,8 +46,8 @@ const Expenditure = () => {
         <div className={styles.left}>
           <hr />
           <div className={styles.grpText}>
-          <span>Society Balance</span>
-          <h2>{numberWithCommas(SocietyBalance)} </h2>
+          <span className={styles.balance}>Society Balance</span>
+          <h2>&#8377;{numberWithCommas(SocietyBalance)} </h2>
           </div>
         </div>
 

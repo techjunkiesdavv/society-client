@@ -1,11 +1,11 @@
 .container {
-background-color: #F0EDE2;
-padding: 2rem 3rem;
+background-color: #0A0909;
+padding: 2rem 1rem;
 ::-webkit-scrollbar{
   display:none
 }
 .notices{
-  background-color:  #F9F8F3;
+  background-color:   rgba(255, 255, 255, 0.1);;
   padding-right: 7rem;
   padding-left: 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
@@ -22,13 +22,13 @@ padding: 2rem 3rem;
       font-size: 1.1rem;
       line-height: 26px;
       letter-spacing: 0.05em;
-      color: #266663;
+      color: #FFDF8D;
       white-space: nowrap;
     }
     .line{
       width: 1px;
       margin: 1rem 1rem;
-      background-color: #266663;
+      background-color: #FFDF8D;
     }
   }
   }
@@ -48,7 +48,7 @@ padding: 2rem 3rem;
         width: 4rem;
         height: 4rem;
         border-radius: 100px;
-        background-color: #266663;
+        background-color: #FFDF8D;
         background-repeat: no-repeat  ;
         background-size: cover;
         display: flex;

@@ -1,5 +1,6 @@
-import React from "react";
-
+import React ,{ useRef }  from "react";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import styles from "./bills.module.scss";
 import images from "../../assets";
 
@@ -32,9 +33,41 @@ const data = [
     DueDate: "12 March 2023",
     Status: "paid",
   },
+    {
+    Name: "Gas Bill",
+    Amount: "2200",
+    BillDate: "12 March 2023",
+    DueDate: "12 March 2023",
+    Status: "paid",
+  },
+    {
+    Name: "Gas Bill",
+    Amount: "2200",
+    BillDate: "12 March 2023",
+    DueDate: "12 March 2023",
+    Status: "paid",
+  },
 ];
 
 const Bills = () => {
+
+ const componentRef = useRef(null);
+ 
+   const generatePdf = async () => {
+  const input = componentRef.current;
+  const inputWidth = 748; // Width of component
+  const inputHeight = 748; // Height of component
+  const pdfHeight =inputHeight
+  const pdf = new jsPDF('p', 'pt', [inputWidth, pdfHeight]);
+  await html2canvas(input)
+    .then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      pdf.addImage(imgData, 'PNG', 0, 0, inputWidth, pdfHeight); // Add the image to the PDF with the calculated height
+      pdf.save("download.pdf");
+    });
+  };
+ 
+ 
   function getFirstWord(str) {
     const firstWhiteSpaceIndex = str.indexOf(" ");
     if (firstWhiteSpaceIndex === -1) {
@@ -53,7 +86,7 @@ const Bills = () => {
   }
 
   return (
-    <div className={styles.bills}>
+    <div className={styles.bills} >
       <div className={styles.top}>
         <h1>Bills</h1>
         <div className={styles.container}>
@@ -63,7 +96,7 @@ const Bills = () => {
             </div>
             <div className={styles.right}>
               <h1>11</h1>
-              <h4 className={styles.text}>Pending Bills</h4>
+              <p className={styles.text}>Pending Bills</p>
             </div>
           </div>
           <div className={styles.card}>
@@ -72,7 +105,7 @@ const Bills = () => {
             </div>
             <div className={styles.right}>
               <h1>11</h1>
-              <h4 className={styles.text}>Pending Bills</h4>
+              <p className={styles.text}>Pending Bills</p>
             </div>
           </div>
           <div className={styles.card}>
@@ -81,11 +114,12 @@ const Bills = () => {
             </div>
             <div className={styles.right}>
               <h1>11</h1>
-              <h4 className={styles.text}>Pending Bills</h4>
+              <p className={styles.text}>Pending Bills</p>
             </div>
           </div>
         </div>
-        <div className={styles.tableContainer}>
+         {/* <button onClick={generatePdf} style={{ width:120, padding:5, borderRadius:3, backgroundColor: '#ffde8d' , color:'black' , marginBottom:10}}>Download PDF</button> */}
+        <div className={styles.tableContainer} ref={componentRef}>
           <div className={styles.rowHead}>
             <span>Name</span>
             <span>Amount</span>
