@@ -1,6 +1,4 @@
 import React ,{ useRef }  from "react";
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
 import styles from "./bills.module.scss";
 import images from "../../assets";
 
@@ -53,19 +51,7 @@ const Bills = () => {
 
  const componentRef = useRef(null);
  
-   const generatePdf = async () => {
-  const input = componentRef.current;
-  const inputWidth = 748; // Width of component
-  const inputHeight = 748; // Height of component
-  const pdfHeight =inputHeight
-  const pdf = new jsPDF('p', 'pt', [inputWidth, pdfHeight]);
-  await html2canvas(input)
-    .then((canvas) => {
-      const imgData = canvas.toDataURL('image/png');
-      pdf.addImage(imgData, 'PNG', 0, 0, inputWidth, pdfHeight); // Add the image to the PDF with the calculated height
-      pdf.save("download.pdf");
-    });
-  };
+
  
  
   function getFirstWord(str) {

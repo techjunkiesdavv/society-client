@@ -1,20 +1,17 @@
 import React from "react";
-import { useState } from "react";
-import { useLocation,Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 import "./Sidebar.scss";
 import SidebarData from "./SidebarData";
-export default function Sidebar(props) {
-  const location = useLocation();
+export default function Sidebar() {
   
-  const [activeElement, setactiveElement] = useState("home");
-
+ 
   return (
     <div className="Sidebar">
       <ul>
         {SidebarData.map((val, key) => {
           return (<Link to={val.link} style={{ textDecoration: 'none', color: 'inherit' }} >
                         <li
-              className={activeElement === val.title ? "click" : ""}
+              className={'home' === val.title ? "click" : ""}
               
               key={key}
             
