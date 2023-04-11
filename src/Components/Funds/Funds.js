@@ -1,116 +1,144 @@
 import React from "react";
 
 import styles from "./funds.module.scss";
-// import images from "../../assets";
+
 
 const data = [
   {
-    Name: "Gas Bill",
+    Name: "Ganesh Pooja Event",
     Amount: "2200",
-    BillDate: "12 March 2023",
     DueDate: "12 March 2023",
-    Status: "upaid",
+    
   },
   {
-    Name: "Electricity Bill",
+    Name: " dj Night",
     Amount: "2200",
-    BillDate: "12 March 2023",
     DueDate: "12 March 2023",
-    Status: "paid",
+   
   },
   {
-    Name: "Electricity Bill",
+    Name: "Garba",
     Amount: "2200",
-    BillDate: "12 March 2023",
     DueDate: "12 March 2023",
-    Status: "unpaid",
+
   },
   {
-    Name: "Gas Bill",
+    Name: "Society Sports",
     Amount: "2200",
-    BillDate: "12 March 2023",
     DueDate: "12 March 2023",
-    Status: "paid",
+    
+  },
+  {
+    Name: "Ganesh Pooja Event",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+    
+  },
+  {
+    Name: " dj Night",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+   
+  },
+  {
+    Name: "Garba",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+
+  },
+  {
+    Name: "Society Sports",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+    
+  },
+  {
+    Name: "Ganesh Pooja Event",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+    
+  },
+  {
+    Name: " dj Night",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+   
+  },
+  {
+    Name: "Garba",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+
+  },
+  {
+    Name: "Society Sports",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+    
+  },
+  {
+    Name: "Ganesh Pooja Event",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+    
+  },
+  {
+    Name: " dj Night",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+   
+  },
+  {
+    Name: "Garba",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+
+  },
+  {
+    Name: "Society Sports",
+    Amount: "2200",
+    DueDate: "12 March 2023",
+    
   },
 ];
 
 const Bills = () => {
-  function getFirstWord(str) {
-    const firstWhiteSpaceIndex = str.indexOf(" ");
-    if (firstWhiteSpaceIndex === -1) {
-      return str;
-    } else {
-      let st = str.substring(0, firstWhiteSpaceIndex);
-
-      switch (st) {
-        // case "Electricity":
-        //   return images.lightning;
-        // case "Gas":
-        //   return images.fire ;
-        default : return "-1" ;
-      }
+  
+  const Amount="5000000";
+  function numberWithCommas(x) {
+    let p = "";
+    if (x.length > 3) {
+      let temp = x.slice(0, x.length - 4);
+      p = temp.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+      p = p + "," + x.slice(x.length - 3, x.length);
+      return p;
     }
+    return x.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",");
   }
-
   return (
     <div className={styles.bills}>
       <div className={styles.top}>
-        <h1>Bills</h1>
+        <h1>FUNDS</h1>
         <div className={styles.container}>
-          <div className={styles.card}>
-            <div className={styles.left}>
-              {/* <img src={images.tick} alt="icon" /> */}
-            </div>
-            <div className={styles.right}>
-              <h1>11</h1>
-              <h4 className={styles.text}>Pending Bills</h4>
-            </div>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.left}>
-              {/* <img src={images.clock} alt="icon" /> */}
-            </div>
-            <div className={styles.right}>
-              <h1>11</h1>
-              <h4 className={styles.text}>Pending Bills</h4>
-            </div>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.left}>
-              {/* <img src={images.warning} alt="icon" /> */}
-            </div>
-            <div className={styles.right}>
-              <h1>11</h1>
-              <h4 className={styles.text}>Pending Bills</h4>
-            </div>
-          </div>
+          <div className={styles.amount}><p>Required Amount</p><h2>&#8377;{numberWithCommas(Amount)}</h2></div>
+          <div className={styles.buttons}><button>Add Amount</button><button>Reject</button></div>
         </div>
+        
         <div className={styles.tableContainer}>
           <div className={styles.rowHead}>
-            <span>Name</span>
-            <span>Amount</span>
-            <span>Bill Date</span>
-            <span> Due Date</span>
-            <span>Status</span>
+            <span className={styles.name}>Name</span>
+            <span className={styles.a}>Amount</span>
+            <span className={styles.date}> Due Date</span>
+    
           </div>
           {data.map((item, index) => (
             <div className={styles.row} key={index}>
-              <span>
-                <img src={getFirstWord(item.Name)} alt='' />
+              <span className={styles.name}>
+                
                 {item.Name}
               </span>
-              <span>{item.Amount}</span>
-              <span>{item.BillDate}</span>
-              <span>{item.DueDate}</span>
-              {item.Status === "paid" ? (
-                <span className={styles.status}>
-                  <p className={styles.statusTextPaid}>Paid</p>
-                </span>
-              ) : (
-                <span className={styles.status}>
-                  <p className={styles.statusTextUnpaid}>Unpaid</p>
-                </span>
-              )}
+              <span className={styles.a} >&#8377;{item.Amount}</span>
+              <span  className={styles.date}>{item.DueDate}</span>
             </div>
           ))}
         </div>

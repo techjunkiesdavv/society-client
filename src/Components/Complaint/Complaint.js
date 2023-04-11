@@ -12,18 +12,22 @@ const Complaint = () => {
     console.log("complaint:", complaint);
 
     setComplaint("");
-    setComplaint("");
+    setComplaintSubject("");
 
     setSubmitted(true);
   };
   return (
     <div className={styles.container}>
+      <div className={styles.heading}>
+      <p className={styles.head}>Got a complaint?</p>
+      <p className={styles.head2}>Report now!</p>
+      </div>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <h1 className={styles.head}>Got a complaint? Report now!</h1>
         <input
           type="text"
           className={styles.input}
           placeholder="Enter subject here"
+          required
           onChange={(e) => {
             setComplaintSubject(e.target.value);
           }}
@@ -31,10 +35,12 @@ const Complaint = () => {
         <textarea
           className={styles.textarea}
           placeholder="Enter Message here!!!!!!!"
+          required
           onChange={(e) => {
             setComplaint(e.target.value);
           }}
         ></textarea>
+        
         <button className={styles.btn} disabled={submitted}>
           Submit
         </button>
