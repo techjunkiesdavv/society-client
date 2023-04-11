@@ -37,6 +37,7 @@ function App() {
   }, []);
 
   console.log(contact);
+  
   const [page, setPage] = useState("Home");
   const [login, setLogin] = useState(false);
   return (
