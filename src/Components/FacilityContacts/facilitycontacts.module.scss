@@ -4,19 +4,20 @@
     justify-content: center;
     background-color: #0A0909;
     color: white;
+    padding-top: 3rem;
     .heading {
         font-family: 'Merriweather', serif;
         font-size: 2rem;
         font-weight: 700;
         align-self: center;
-        margin-top: 4rem;
+        margin: 0rem 2rem;
         word-spacing: 1rem;
     }
     .job {
         .jobheading {
             display: flex;
             align-items: center;
-            margin : 3rem 0rem 2rem 5%;
+            margin : 3rem 0rem 2rem 2rem;
             img {
                 margin-right: 1rem;
             }
@@ -37,7 +38,7 @@
         display: grid;
         @include grid(3, 22px);
         padding-bottom: 3rem;
-        margin: 0% 5%;
+        margin: 0% 2rem;
         // overflow-x: scroll;
         @media (max-width: 1024px) {
             @include grid(2, 40px);

@@ -19,12 +19,10 @@
     margin: auto;
     :hover {
       cursor: pointer;
-      filter: invert(41%) sepia(87%) saturate(1130%) hue-rotate(337deg)
-      brightness(97%) contrast(95%);
+      filter: invert(81%) sepia(19%) saturate(957%) hue-rotate(341deg) brightness(109%) contrast(106%);
     }
     .click {
-      filter: invert(41%) sepia(87%) saturate(1130%) hue-rotate(337deg)
-      brightness(97%) contrast(95%);
+      filter: invert(81%) sepia(19%) saturate(957%) hue-rotate(341deg) brightness(109%) contrast(106%);
     }
     li {
       color: #EFEFEF;
@@ -35,12 +33,16 @@
       width: 100%;
       height: auto;
       margin: 1.75rem 0rem;
-
+      
       svg {
         width: 30px;
         height: 30px;
         margin-bottom: 0.3rem;
+       
       }
+      :hover{
+        filter:none;
+       }
     }
     svg {
       height: 40px;

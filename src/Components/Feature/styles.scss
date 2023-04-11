@@ -1,6 +1,6 @@
 .fcontainer {
   margin: 0%;
-  padding: 5%;
+  padding: 2rem;
   height: fit-content;
   background-color: #0a0909;
   display: flex;
@@ -25,6 +25,9 @@
     }
     .faboutHead {
       width: 70%;
+      @media screen and (max-width:768px) {
+        width: 100%;
+      }
       color: #efefef;
       font-family: "Jost";
       font-style: normal;
@@ -61,6 +64,7 @@
 
   @media (max-width: 1000px) {
     flex-direction: column;
+    width: 100%;
   }
 
   @mixin grid($columns, $gutter) {
@@ -83,11 +87,9 @@
     }
     @media (max-width: 768px) {
       @include grid(2, 20px);
-      // grid-template-columns: 1fr;
     }
     @media (max-width: 430px) {
       @include grid(1, 20px);
-      // grid-template-columns: 1fr;
     }
   }
   .flipcard {
@@ -101,12 +103,11 @@
       border-radius: 2px;
       background-color: #0a0909;
       min-width: fit-content;
-      transition: transform 0.7s;
+      transition: transform .8s;
       transform-style: preserve-3d;
       position: relative;
       width: 100%;
       height: 100%;
-
       .beforehovercard {
         width: 100%;
         height: 100%;

@@ -1,4 +1,4 @@
-import { Complaint,Login,About,Profile,Sidebar,Expenditure,Committee,Feature,Announcement,AnnouncementHead,Facilitycontacts ,Bills} from "./Components";
+import { Complaint,Login,About,Profile,Sidebar,Footer,Expenditure,Committee,Feature,Announcement,AnnouncementHead,Facilitycontacts ,Bills} from "./Components";
 import './App.module.scss';
 import styles from './App.module.scss';
 import { useEffect, useState } from "react";
@@ -42,6 +42,7 @@ function App() {
       {page==="Announcement"&&<Announcement/>}
       {page==="Home" && <Bills />}
       { page === "Home" && <Facilitycontacts />}
+     {page==="Home"&&<Footer/>}
       {page==="Facility Contact"&&<Facilitycontacts/>}
       {/* <Register/> */}
       </div>
