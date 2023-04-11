@@ -85,7 +85,7 @@ const App = () => {
                 
           </Routes>
         </div>   
-         <div className={styles.login}>
+         <div className={styles.profile}>
                   { user?<Profile />:<Login settUser={settUser}/>}
                  
                 </div>

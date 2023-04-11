@@ -12,7 +12,7 @@ export default function Sidebar(props) {
     <div className="Sidebar">
       <ul>
         {SidebarData.map((val, key) => {
-          return (<Link to={val.link} >
+          return (<Link to={val.link} style={{ textDecoration: 'none', color: 'inherit' }} >
                         <li
               className={activeElement === val.title ? "click" : ""}
               
