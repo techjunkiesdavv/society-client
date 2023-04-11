@@ -10,32 +10,32 @@ export const SidebarData= [
         {
             title: "Home",
             icon: <Homeicon/>,
-            link: "/home",
+            link: "/",
         },
         {
             title: "Announcement",
             icon: <Noticeicon/>,
-            link: "/home",
+            link: "/announcement",
         },
         {
             title: "Facility Contact",
             icon: <Facilityicon/>,
-            link: "/home",
+            link: "/fcontact",
         },
         {
             title: "Funds",
             icon: <Fundicon/>,
-            link: "/home",
+            link: "funds",
         },
         {
             title: "Expenditure",
             icon: <Expendicon/>,
-            link: "/home",
+            link: "/expenditure",
         },
         {
             title: "Complaint",
             icon: <Complainticon/>,
-            link: "/home",
+            link: "/complaint",
         },
     ];
 export default SidebarData;

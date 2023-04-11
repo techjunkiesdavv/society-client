@@ -1,44 +1,119 @@
-.container{
+// .container{
+//     display: flex;
+    
+//     .sidebar{
+//         width: 10%;
+//         position: fixed;
+//         left: 0;
+        // @media screen and (max-width:1024px)  {
+        //    // display: none;
+        //     width: 20%;
+        // }
+        // @media screen and (max-width:420px)  {
+        //     display: none;
+            
+        //  }
+//     }
+//    .home{
+//     margin-left: 10%;
+//     margin-right: 23%;
+//     width: 70%;
+//     overflow: scroll;
+    // @media screen and (max-width:1024px)  {
+    //     width: 80%;
+    //     margin-right: 0%;
+    //     margin-left: 20%;
+    // }
+    // @media screen and (max-width:420px)  {
+    //     width: 100%;
+    //     margin-right: 0%;
+    //     margin-left: 0%;
+    // }
+//    }
+//    .login{
+//     position: fixed;
+//     overflow-y: scroll;
+//     max-height: 100%;
+//     right: 0;
+//     width: 23%;
+
+
+//     position: fixed;
+//     top: 0;
+//     right: 0;
+//     height: 100vh;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     background-color: #f0f0f0;
+
+
+
+
+    // @media screen and (max-width:1024px)  {
+    //     display: none;
+    // }
+//    }
+// }
+
+.container {
     display: flex;
     flex-direction: row;
-    
-    .sidebar{
-        width: 10%;
-        position: fixed;
-        left: 0;
-        @media screen and (max-width:1024px)  {
-           // display: none;
-            width: 20%;
-        }
-        @media screen and (max-width:420px)  {
-            display: none;
-            
-         }
-    }
-   .home{
-    margin-left: 10%;
-    margin-right: 23%;
-    width: 67%;
-    overflow: scroll;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .sidebar {
+    width: 10%;
+    flex-shrink: 0;
     @media screen and (max-width:1024px)  {
-        width: 80%;
+        // display: none;
+         width: 20%;
+     }
+     @media screen and (max-width:420px)  {
+         display: none;
+         
+      }
+  }
+  
+  .home {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: scroll;
+    margin-right: 23%;height: 100vh;
+    @media screen and (max-width:1024px)  {
+        width: 100%;
         margin-right: 0%;
-        margin-left: 20%;
     }
     @media screen and (max-width:420px)  {
         width: 100%;
         margin-right: 0%;
         margin-left: 0%;
     }
-   }
-   .profile{
+
+  }
+  
+  .content {
+    margin: 0px;
+  }
+  
+  .login {
     position: fixed;
-    overflow-y: scroll;
-    max-height: 100%;
+    top: 0;
     right: 0;
     width: 23%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
     @media screen and (max-width:1024px)  {
         display: none;
     }
-   }
-}
+  }
+  .fullWidth{
+    width: 100%;
+  }
+  
+
