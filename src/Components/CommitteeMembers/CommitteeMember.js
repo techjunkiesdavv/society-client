@@ -91,7 +91,8 @@ const CommitteeMember = () => {
   }, [seconds]);
   return (
     <div className={styles.cmemberContainer}>
-      <h2>Committee Members</h2>
+      <h2 className={styles.h21}>Committee</h2>
+      <h2 className={styles.h22}>Members</h2>
       <div className={styles.allcards} id="container">
         {detail.map((detail, i) => {
           return (
@@ -120,13 +121,17 @@ const CommitteeMember = () => {
         })}
       </div>
       <div className={styles.scrollbuttons}>
+        <div className={styles.leftArrow}>
         <img
           src={leftArrow}
           alt="scrollarrow"
           className={styles.leftarrow}
           onClick={() => scrollLeft(500)}
         />
+        </div>
+        <div className={styles.rightArrow}>
         <img src={rightArrow} alt="scrollarrow" onClick={() => scrollRight()} />
+        </div>
       </div>
     </div>
   );

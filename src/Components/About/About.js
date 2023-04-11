@@ -11,35 +11,44 @@ const About = () => {
         <div className={styles.aboutContainer}>
           <h1 className={styles.heading}>ABOUT</h1>
           <h2 className={styles.subhead}>
-            {" "}
             Your Business Success Built
             <br />
             On A Powerful Customer <br />
             Experience Platform
           </h2>
-          <p className={styles.content}>{para}</p>
+          <p
+            className={`${styles.content} ${styles.ellipsis}`}
+            onClick={(element) => {
+              element.currentTarget.classList.remove(styles.ellipsis);
+            }}
+          >
+            {para}
+          </p>
         </div>
-
-        <div className={styles.aboutimage}>
+        <div className={styles.circular}>
+          <div className={styles.aboutimage} />
           <div className={styles.block1}>
-            <span className={styles.imgicon}>
+            <div className={styles.imgicon}>
               <img src={images.building} alt="" />
-            </span>
-            8<div>Wings</div>
+              <p>8</p>
+            </div>
+            <div>Wings</div>
           </div>
-          <div className={styles.line}></div>
+
           <div className={styles.block2}>
-            <span className={styles.imgicon}>
+            <div className={styles.imgicon}>
               <img src={images.group} alt="" />
-            </span>
-            2500<div>Members</div>
+              <p>2500</p>
+            </div>
+            <div>Members</div>
           </div>
-          <div className={styles.line}></div>
+
           <div className={styles.block3}>
-            <span className={styles.imgicon}>
+            <div className={styles.imgicon}>
               <img src={images.flat} alt="" />
-            </span>
-            126<div>Flat</div>
+              <p>126</p>
+            </div>
+            <div>Flat</div>
           </div>
         </div>
       </div>
