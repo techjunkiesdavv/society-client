@@ -13,18 +13,17 @@ import {
   Facilitycontacts,
   Bills,
   Footer,
+  Funds,
 } from "./Components";
 import "./App.module.scss";
 import React from "react";
-import { BrowserRouter, Routes,
-  Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import decode from "jwt-decode";
 
 import styles from "./App.module.scss";
 import { useEffect, useState } from "react";
 import { fetchData } from "./api/fetch";
 
- 
 const App = () => {
   const [contact, setContact] = useState([]);
   useEffect(() => {
@@ -35,7 +34,6 @@ const App = () => {
     JSON.parse(localStorage.getItem("profile"))
   );
 
-
   useEffect(() => {
     const token = user?.token;
     if (token) {
@@ -43,7 +41,6 @@ const App = () => {
       if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }
     settUser(JSON.parse(localStorage.getItem("profile")));
-  
   }, [user]);
   const logout = () => {
     localStorage.clear();
@@ -52,54 +49,44 @@ const App = () => {
   };
   return (
     <BrowserRouter>
-        
-              
       <div className={styles.container}>
         <div className={styles.sidebar}>
           <Sidebar />
         </div>
         <div className={styles.home}>
           <Routes>
-            <Route path="/" element={
-              <React.Fragment>
-                <div className={styles.content}>
-                  <AnnouncementHead />
-                  <About />
-                  <Feature />
-                  <Committee />
-                  <Complaint />
-                  <Expenditure />
-                  <Announcement />
-                  <Bills/>
-                  <Facilitycontacts />
-                </div>
-            
-              </React.Fragment>
-            } />
-            <Route path="/announcement" element={ <Announcement />} />
-            
-            
-            
-            <Route path="/fcontact" element={ <Facilitycontacts />} />
-            
-            <Route path="/funds" element={ <Bills />} />
-            <Route path="/expenditure" element={ <Expenditure />} />
-            
-            <Route path="/complaint" element={ <Complaint/>} />
-            <Route path="/register" element={ <Register />} />
-                
+            <Route
+              path="/"
+              element={
+                <React.Fragment>
+                  <div className={styles.content}>
+                    <AnnouncementHead />
+                    <About />
+                    <Feature />
+                    <Committee />
+                    <Complaint />
+                    <Expenditure />
+                    <Announcement />
+                    <Bills />
+                    <Facilitycontacts />
+                  </div>
+                </React.Fragment>
+              }
+            />
+            <Route path="/announcement" element={<Announcement />} />
+            <Route path="/fcontact" element={<Facilitycontacts />} />
+            <Route path="/funds" element={<Funds />} />
+            <Route path="/expenditure" element={<Expenditure />} />
+            <Route path="/complaint" element={<Complaint />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
-          <Footer/>
-        </div>   
-         <div className={styles.profile}>
-                  { user?<Profile />:<Login settUser={settUser}/>}
-                 
-                </div>
-         
+          <Footer />
+        </div>
+        <div className={styles.profile}>
+          {user ? <Profile /> : <Login settUser={settUser} />}
+        </div>
       </div>
-            
     </BrowserRouter>
-
   );
-}
+};
 export default App;
