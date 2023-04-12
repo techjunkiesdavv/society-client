@@ -20,6 +20,9 @@
     margin-right: 23%;
     width: 67%;
     overflow: scroll;
+    
+    .content{
+    margin: 0px;}
     @media screen and (max-width:1024px)  {
         width: 80%;
         margin-right: 0%;

@@ -105,7 +105,7 @@
       border-radius: 2px;
       background-color: #0a0909;
       min-width: fit-content;
-      transition: transform .8s;
+      transition: transform 1s;
       transform-style: preserve-3d;
       position: relative;
       width: 100%;
@@ -120,8 +120,7 @@
         align-items: center;
         justify-content: center;
         .fgrid-item-img {
-          transform: rotateY(0deg);
-          background-color: rgb(255, 223, 141, 0.2);
+          background-color: rgb(255, 223, 141, 0.2) ;
           width: 60px;
           height: 60px;
           border-radius: 50%;
@@ -157,11 +156,13 @@
           padding: 1rem;
           transform: rotateY(0deg);
         }
+        background-color: #ffdf8d;
       }
     }
     :hover {
       transform: rotateY(180deg);
-      cursor: none;
+        // transition: 0.8s ease;
     }
+    
   }
 }

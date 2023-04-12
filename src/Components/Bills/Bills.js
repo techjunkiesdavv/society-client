@@ -1,5 +1,4 @@
-import React from "react";
-
+import React ,{ useRef }  from "react";
 import styles from "./bills.module.scss";
 import images from "../../assets";
 
@@ -32,9 +31,29 @@ const data = [
     DueDate: "12 March 2023",
     Status: "paid",
   },
+    {
+    Name: "Gas Bill",
+    Amount: "2200",
+    BillDate: "12 March 2023",
+    DueDate: "12 March 2023",
+    Status: "paid",
+  },
+    {
+    Name: "Gas Bill",
+    Amount: "2200",
+    BillDate: "12 March 2023",
+    DueDate: "12 March 2023",
+    Status: "paid",
+  },
 ];
 
 const Bills = () => {
+
+ const componentRef = useRef(null);
+ 
+
+ 
+ 
   function getFirstWord(str) {
     const firstWhiteSpaceIndex = str.indexOf(" ");
     if (firstWhiteSpaceIndex === -1) {
@@ -53,7 +72,7 @@ const Bills = () => {
   }
 
   return (
-    <div className={styles.bills}>
+    <div className={styles.bills} >
       <div className={styles.top}>
         <h1>Bills</h1>
         <div className={styles.container}>
@@ -85,7 +104,8 @@ const Bills = () => {
             </div>
           </div>
         </div>
-        <div className={styles.tableContainer}>
+         {/* <button onClick={generatePdf} style={{ width:120, padding:5, borderRadius:3, backgroundColor: '#ffde8d' , color:'black' , marginBottom:10}}>Download PDF</button> */}
+        <div className={styles.tableContainer} ref={componentRef}>
           <div className={styles.rowHead}>
             <span>Name</span>
             <span>Amount</span>
