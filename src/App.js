@@ -34,7 +34,7 @@ const App = () => {
       if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }
     settUser(JSON.parse(localStorage.getItem("profile")));
-  }, []);
+  }, [user]);
   const logout = () => {
     localStorage.clear();
 
