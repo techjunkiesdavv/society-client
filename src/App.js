@@ -19,18 +19,11 @@ import "./App.module.scss";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import decode from "jwt-decode";
-
 import styles from "./App.module.scss";
 import { useEffect, useState } from "react";
-import { fetchData } from "./api/fetch";
 
 const App = () => {
-  const [contact, setContact] = useState([]);
-  useEffect(() => {
-    fetchData("contact").then((data) => setContact(data));
-  }, [contact]);
-
-  const [user, settUser] = useState(
+    const [user, settUser] = useState(
     JSON.parse(localStorage.getItem("profile"))
   );
 
@@ -41,7 +34,7 @@ const App = () => {
       if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }
     settUser(JSON.parse(localStorage.getItem("profile")));
-  }, [user]);
+  }, []);
   const logout = () => {
     localStorage.clear();
 

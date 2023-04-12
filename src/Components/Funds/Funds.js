@@ -123,7 +123,7 @@ const Bills = () => {
           <div className={styles.amount}><p>Required Amount</p><h2>&#8377;{numberWithCommas(Amount)}</h2></div>
           <div className={styles.buttons}><button>Add Amount</button><button>Reject</button></div>
         </div>
-        
+        </div>
         <div className={styles.tableContainer}>
           <div className={styles.rowHead}>
             <span className={styles.name}>Name</span>
@@ -142,7 +142,7 @@ const Bills = () => {
             </div>
           ))}
         </div>
-      </div>
+      
     </div>
   );
 };
