@@ -92,8 +92,10 @@
       @include grid(1, 20px);
     }
   }
+  position: relative;
   .flipcard {
     perspective: 1000px;
+    position: relative;
     .fgrid-item {
       padding: 15%;
       border-color: #bebebe;
@@ -117,8 +119,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transform: rotateY(0deg);
         .fgrid-item-img {
+          transform: rotateY(0deg);
           background-color: rgb(255, 223, 141, 0.2);
           width: 60px;
           height: 60px;
@@ -127,14 +129,15 @@
           align-items: center;
           justify-content: center;
         }
-
         .fgrid-item-title {
+          transform: rotateY(0deg);
           margin-top: 2%;
           font-size: 1.5rem;
           font-weight: bold;
           color: #efefef;
           line-height: 1.5;
         }
+          pointer-events: none;
       }
       .flip-card-back {
         position: absolute;
@@ -145,6 +148,7 @@
         transform: rotateY(180deg);
         display: flex;
         font-weight: 400;
+        background-color: #ffdf8d;
         font-size: 1rem;
         color: #000000;
         overflow: scroll;
@@ -157,7 +161,7 @@
     }
     :hover {
       transform: rotateY(180deg);
-      background-color: #ffdf8d;
+      cursor: none;
     }
   }
 }

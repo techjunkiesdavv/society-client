@@ -22,7 +22,7 @@ export default function Sidebar(props) {
               <div>
                 <svg>{val.icon}</svg>
               </div>
-              <div>{val.title}</div>
+              <p>{val.title}</p>
             </li>
           );
         })}
