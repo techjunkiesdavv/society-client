@@ -2,50 +2,15 @@ import React from "react";
 import "./styles.scss";
 import { images } from "../../constants";
 import AnnouncementCard from "./AnnouncementCard";
-
+import { fetchData } from "../../api/fetch";
+import { useEffect, useState } from "react";
 const Announcement = () => {
-
-  const data = [
-    {
-      date: "2023-03-20T00:00:00.000Z",
-      title: "Society Meeting",
-      desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-      key : "1"
-    },
-    {
-      date: "2023-03-20T00:00:00.000Z",
-      title: "Society Meeting",
-      desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-      key :"2"
-    },
-    {
-      date: "2023-03-19T00:00:00.000Z",
-      title: "Society Meeting",
-      desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-      key:"3"
-    }, {
-      date: "2023-03-19T00:00:00.000Z",
-      title: "Society Meeting",
-      desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-      key:"3"
-    }, {
-      date: "2023-03-19T00:00:00.000Z",
-      title: "Society Meeting",
-      desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-      key:"3"
-    }, {
-      date: "2023-03-19T00:00:00.000Z",
-      title: "Society Meeting",
-      desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-      key:"3"
-    }, {
-      date: "2023-03-19T00:00:00.000Z",
-      title: "Society Meeting",
-      desc: "A society meeting will be conducted on 18th March 2023, Sunday in Society Meeting Room. Everybody is expected to arrive by 09:45a.m. as meeting will start from 10:00 p.m.",
-      key:"3"
-    },
-   
-  ];
+  const [data, setdata] = useState([]);
+  useEffect(() => {
+    fetchData("announcements").then((data) => setdata(data));
+    
+  }, [data]);
+  
   
   return (
     <div className="container">

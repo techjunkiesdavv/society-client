@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import styles from "./Announcement.module.scss";
-import { ReactComponent as Arrow } from "../../assets/viewmoreArrow.svg";
+import { ReactComponent as Arrow } from "../../assets/viewmoreArrow.svg";import { fetchData } from "../../api/fetch";
+import { useEffect, useState } from "react";
+
 export default function AnnouncementHead() {
-  const Announcements = [
-    "Society Meeting",
-    "Society Meeting",
-    "Society Meeting",
-    "Society Meeting",
-    "Society Meeting",
-    "Society Meeting",
-    "Society Meeting",
-  ];
+ 
+    const [data, setdata] = useState([]);
+    useEffect(() => {
+      fetchData("announcements").then((data) => setdata(data));
+      
+    }, [data]);
+  
   const roller = () => {
     const text = document.getElementById("text");
     text.innerHTML = text.innerText
@@ -27,11 +27,11 @@ export default function AnnouncementHead() {
     <div className={styles.container}>
       <div className={styles.notices}>
         <div className={styles.head}>
-          {Announcements.map((val, i) => {
+          {data.map((val, i) => {
             return (
               <div className={styles.head2} key={i}>
-                <p>{val}</p>
-                {i !== Announcements.length - 1 && (
+                <p>{val.announcement}</p>
+                {i !== data.length - 1 && (
                   <div className={styles.line} />
                 )}
               </div>

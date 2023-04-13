@@ -18,12 +18,12 @@ const AnnouncementCard = ({item}) => {
           <div className="emptyButton"></div>
         )}
         <div className="grid-item-date">{formatDate(item.date)}</div>
-        <p className="grid-item-title">{item.title}</p>
+        <p className="grid-item-title">{item.announcement}</p>
         <p
           className="grid-item-description ellipsis"
           onClick={(element)=>{element.currentTarget.classList.remove("ellipsis")}}
         >
-          {item.desc}
+          {item.description}
         </p>
       </div>
     );
