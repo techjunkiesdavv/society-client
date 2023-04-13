@@ -55,7 +55,6 @@ const Announcement = () => {
       </div>
       <div className="grid-container">
         {data.map((item,i) => {
-          console.log(i);
           return(
           <AnnouncementCard item={item}  key={i}  data-id={item.id} />
         )})}

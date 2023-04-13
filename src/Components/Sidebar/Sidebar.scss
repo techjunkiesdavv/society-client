@@ -1,6 +1,5 @@
 .Sidebar {
-
-  border-right: 2px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
   min-height: 100vh;
   display: flex;
   padding: 0rem 2rem;
@@ -17,12 +16,16 @@
     justify-content: space-around;
     align-items: center;
     margin: auto;
-    :hover {
-      cursor: pointer;
+    .link{
+      :hover{
+        cursor: pointer;
+        filter: invert(81%) sepia(19%) saturate(957%) hue-rotate(341deg) brightness(109%) contrast(106%);
+      }
+      &:focus {
       filter: invert(81%) sepia(19%) saturate(957%) hue-rotate(341deg) brightness(109%) contrast(106%);
-    }
-    .click {
-      filter: invert(81%) sepia(19%) saturate(957%) hue-rotate(341deg) brightness(109%) contrast(106%);
+      :hover{
+        filter: none;
+      }
     }
     li {
       color: #EFEFEF;
@@ -33,21 +36,15 @@
       width: 100%;
       height: auto;
       margin: 1.75rem 0rem;
-      
       svg {
         width: 30px;
         height: 30px;
         margin-bottom: 0.3rem;
-       
       }
       :hover{
         filter:none;
        }
     }
-    svg {
-      height: 40px;
-      width: 40px;
-      place-items: center;
-    }
+  }
   }
 }
