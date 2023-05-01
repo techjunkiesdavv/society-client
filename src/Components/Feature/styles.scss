@@ -1,0 +1,167 @@
+.fcontainer {
+  margin: 0%;
+  padding: 2rem;
+  height: fit-content;
+  background-color: #0a0909;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .fheading {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    .fhead {
+      color: #bebebe;
+      font-weight: bold;
+      font-size: 1rem;
+      letter-spacing: 4%;
+      line-height: 20px;
+      letter-spacing: 0.04em;
+      text-transform: capitalize;
+      font-family: "Merriweather";
+    }
+    .faboutHead {
+      width: 70%;
+      @media screen and (max-width:768px) {
+        width: 100%;
+      }
+      color: #efefef;
+      font-family: "Jost";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 2rem;
+    }
+
+    @media (max-width: 770px) {
+      padding: 0% 8% 3% 8%;
+
+      .fhead {
+        font-size: 1rem;
+        letter-spacing: 4%;
+      }
+      .faboutHead {
+        color: #efefef;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+    }
+    @media (max-width: 430px) {
+      padding: 0% 5% 3% 5%;
+      .fhead {
+        font-size: 1rem;
+        letter-spacing: 4%;
+      }
+      .faboutHead {
+        color: #efefef;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @mixin grid($columns, $gutter) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-gap: $gutter;
+  }
+
+  .featureContainer {
+    @include grid(3, 20px);
+    .fgrid-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 1000px) {
+      @include grid(3, 20px);
+    }
+    @media (max-width: 768px) {
+      @include grid(2, 20px);
+    }
+    @media (max-width: 430px) {
+      @include grid(1, 20px);
+    }
+  }
+  position: relative;
+  .flipcard {
+    perspective: 1000px;
+    position: relative;
+    .fgrid-item {
+      padding: 15%;
+      border-color: #bebebe;
+      text-align: center;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 2px;
+      background-color: #0a0909;
+      min-width: fit-content;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .beforehovercard {
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .fgrid-item-img {
+          background-color: rgb(255, 223, 141, 0.2) ;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .fgrid-item-title {
+          transform: rotateY(0deg);
+          margin-top: 2%;
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #efefef;
+          line-height: 1.5;
+        }
+          pointer-events: none;
+      }
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        display: flex;
+        font-weight: 400;
+        background-color: #ffdf8d;
+        font-size: 1rem;
+        color: #000000;
+        overflow: scroll;
+        p {
+          margin: auto;
+          padding: 1rem;
+          transform: rotateY(0deg);
+        }
+        background-color: #ffdf8d;
+      }
+    }
+    :hover {
+      transform: rotateY(180deg);
+    }
+    
+  }
+}

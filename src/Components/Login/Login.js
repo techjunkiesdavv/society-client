@@ -5,13 +5,16 @@ import emailImg from '../../assets/email1.svg';
 import eyeopen from '../../assets/show.svg';
 import eyeclose from '../../assets/hide.svg';
 import lock from '../../assets/passw.svg';
+import {  Link } from 'react-router-dom';
+import { signin } from '../../actions/auth';
 // images folder after merge
-
-const Login = (props) => {
+const initialState = {  email: '', password: ''};
+const Login = ({settUser}) => {
   const [showpassword, setshowpassword]=useState(false);
-  const [email,setEmail] = useState('') ;
-  const [password,setPassword] = useState('') ;
+
+  const [formData,setFormData]=useState(initialState);
   const [isLogin,setIsLogin] = useState(false) ;
+  
 
   function Toggle() {
     var temp = document.getElementById("typepass");
@@ -25,40 +28,46 @@ const Login = (props) => {
     }
     }
 
-    const handleLogin =(e)=>{
-      props.setLogin(true);
-      setIsLogin(true) ;
-        e.preventDefault() ;
+    const handleLogin =async (e)=>{
       
-      //call ;
-      setIsLogin(false) ;
+      e.preventDefault() ;
+      const data=await signin(formData);
+      settUser(data);
+      console.log(data);     
+      setIsLogin(true) ;
 
     }
-
+    const handleChange=(e)=>{
+      
+      setFormData({...formData,[e.target.name]:e.target.value});
+    
+    
+    };
   return (
     <div className={styles.loginpage}>
-        <form className={styles.form} onSubmit={handleLogin} >
+        <form className={styles.form} onSubmit={handleLogin}  >
       <img src={logo1} alt='logo' className={styles.logo}/>
       <p className={styles.head}>Hello, Welcome back!</p>
       <div className={styles.emailinfo} >
         <img src={emailImg} alt='email' className={styles.emailimg}/>
         <input
           type='email'
+          name='email'
           className={styles.email}
           placeholder='Email' 
           required
-          onChange={(e)=> setEmail(e.target.value)}
-          value={email} />
+          onChange={handleChange}
+        />
       </div> 
       <div className={styles.passinfo} >
         <img src={lock} alt='password' className={styles.passimg}/>
         <input
           type='password' 
+          name='password'
           className={styles.pass}
           placeholder='Password'
           id="typepass"
-          onChange={(e)=> setPassword(e.target.value)}
-          value={password}
+          onChange={handleChange}
           required
           />
      
@@ -80,10 +89,11 @@ const Login = (props) => {
       { isLogin ? 'Logging in':' Log in' } 
       </button>
 
-      <div className={styles.register}>
+   <Link to='/register' style={{ textDecoration: 'none', color: 'inherit' }}>   <div className={styles.register}>
         <p className={styles.text1}>Don't have an account?</p>
         <p className={styles.text2}>Register now!</p>
       </div>
+      </Link>
       </form>
     </div> 
   );

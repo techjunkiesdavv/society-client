@@ -1,29 +1,24 @@
 import React from "react";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Sidebar.scss";
 import SidebarData from "./SidebarData";
-export default function Sidebar(props) {
-  const [activeElement, setactiveElement] = useState("home");
-  const handleActiveElement = (element) => {
-    setactiveElement(element);
-    props.setPage(element);
-  };
+export default function Sidebar() {
   return (
     <div className="Sidebar">
       <ul>
         {SidebarData.map((val, key) => {
           return (
-            <li
-              className={activeElement === val.title ? "click" : ""}
-              onClick={() => handleActiveElement(val.title)}
-              key={key}
-              
-            >
-              <div>
-                <svg>{val.icon}</svg>
-              </div>
-              <div>{val.title}</div>
-            </li>
+            <Link
+              to={val.link}
+              style={{ textDecoration: "none", color: "inherit" } } className="link"
+              key={key}>
+              <li className={"home" === val.title ? "click" : ""} >
+                <div>
+                  <svg>{val.icon}</svg>
+                </div>
+                <p>{val.title}</p>
+              </li>
+            </Link>
           );
         })}
       </ul>

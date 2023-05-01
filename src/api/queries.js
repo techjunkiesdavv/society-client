@@ -5,6 +5,7 @@ const AboutQuery = '*[_type == "about"]';
 const FacilityContactsQuery = '*[_type == "facilityContacts"]';
 const BillsQuery = '*[_type == "bills"]';
 
+
 export const getquery = (text) => {
   switch (text) {
     case "expenditure":

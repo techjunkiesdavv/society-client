@@ -4,12 +4,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #f0ede2;
-  border: 1px solid #bababa;
+  background-color: #0A0909;
+  border-left: 1px solid #EFEFEF;
   padding: 3rem 0rem;
-  button:hover{
-    cursor: pointer;
-  }
+  
   .userinfo {
     margin: 0rem 6rem;
     display: flex;
@@ -17,6 +15,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: #EFEFEF;
     .profileimg {
       img {
         height: 12rem;
@@ -31,7 +30,7 @@
       // font-weight: 400;
       font-size: 1.5rem;
       letter-spacing: 0.02em;
-      color: #000000;
+
     }
     .userphone {
       // font-family: "Jost";
@@ -40,7 +39,6 @@
       font-size: 1.25rem;
       text-align: center;
       letter-spacing: 0.02em;
-      color: #404040;
       margin-top: 0.4rem;
     }
   }
@@ -51,46 +49,39 @@
     width: 100%;
     margin: 2rem 0rem;
     text-align: center;
+    color: #EFEFEF;
     .userwing {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      // font-family: "Jost";
-      // font-style: normal;
-      // font-weight: 400;
+      font-weight: 400;
       letter-spacing: 0.02em;
       .wingname {
         font-size: 1.5rem;
-        color: #000000;
+
       }
       .wing {
         font-size: 1.25rem;
-        color: #404040;
       }
     }
     .line{
-        
         height: 50px;
         width: 1px;
-        background-color: #bababa;
+        background-color: #BABABA;;
     }
     .userflat {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      // font-family: "Jost";
-      // font-style: normal;
-      // font-weight: 400;
+      font-weight: 400;
       letter-spacing: 0.02em;
       .flatname {
         font-size: 1.5rem;
-        color: #000000;
       }
       .flat {
         font-size: 1.25rem;
-        color: #404040;
       }
     }
   }
@@ -100,6 +91,8 @@
     justify-content: space-between;
     border-top: 1px solid #bababa;
     padding: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
     .bill {
       padding: 0rem 1rem;
       font-family: "Jost";
@@ -108,59 +101,66 @@
       .billname {
         margin: 0.1rem;
         font-weight: 700;
-        font-size: 1.25rem;
-        color: #747474;
+        font-size: 1.2rem;
+        color: #EFEFEF;
       }
       .billamount {
         margin: 0.4rem 0.1rem;
         font-weight: 400;
         font-size: 1.25rem;
         letter-spacing: 0.02em;
-        color: #404040;
+        color: #BEBEBE;
       }
     }
     .status {
       margin: 0rem 1.5rem;
       position: relative;
+      
       .buttoncolorpaid {
-        background: #79db74;
+      border: 1px solid #4BFF3B;
+      
+      
+    }
+    .buttoncolorunpaid {
+      border: 1px solid #FF0000;
       }
-      .buttoncolorunpaid {
-        background: #03a2df;
+      :hover{
+        cursor: pointer;
       }
       button {
         position: relative;
         top: 15%;
-        border-radius: 4px;
+        border-radius: 2px;
         border: 0px;
         padding: 0.5rem 1.25rem;
-        // font-family: "Jost";
-        // font-style: normal;
-        // font-weight: 400;
+        font-weight: 400;
         font-size: 1rem;
         letter-spacing: 0.02em;
         color: #FFFFFF;
-
+        background-color: transparent;
+       
       }
     }
   }
   .extras {
-    margin-top: 4rem;
+    margin-top: 1rem;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     button {
-      background: #f25d3b;
-      border-radius: 4px;
-      border: 0px;
-      padding: 1rem 2rem;
+      background: transparent;
+      border-radius: 2px;
+      padding: .7rem 2rem;
       // font-family: "Merriweather";
       // font-style: normal;
-      // font-weight: 400;
+      margin: 1rem;
+      font-weight: 400;
       font-size: 1.1rem;
       text-align: center;
-      color: #ffffff;
+      color: #E9E9E9;
+      border: 1px solid #EFEFEF;
     }
   }
 }

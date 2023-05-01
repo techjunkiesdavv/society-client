@@ -18,8 +18,11 @@ const Complaint = () => {
   };
   return (
     <div className={styles.container}>
+      <div className={styles.heading}>
+      <p className={styles.head}>Got a complaint?</p>
+      <p className={styles.head2}>Report now!</p>
+      </div>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <h1 className={styles.head}>Got a complaint?  Report now!</h1>
         <input
           type="text"
           className={styles.input}

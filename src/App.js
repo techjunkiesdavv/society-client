@@ -6,63 +6,80 @@ import {
   Sidebar,
   Expenditure,
   Committee,
+  Feature,
   Announcement,
+  Register,
   AnnouncementHead,
   Facilitycontacts,
   Bills,
-  Register,
+  Footer,
+  Funds,
 } from "./Components";
 import "./App.module.scss";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import decode from "jwt-decode";
 import styles from "./App.module.scss";
 import { useEffect, useState } from "react";
-import { fetchData } from "./api/fetch";
 
-// check fetch
-
-function App() {
-  const [contact, setContact] = useState([]);
-
-  // text for queries are:-
-
-
-  // expenditure
-  // committe_members
-  // about
-  // announcements
-  // facilityContacts
-  // bills
+const App = () => {
+    const [user, settUser] = useState(
+    JSON.parse(localStorage.getItem("profile"))
+  );
 
   useEffect(() => {
-    fetchData("about").then((data) => setContact(data));
-  }, []);
+    const token = user?.token;
+    if (token) {
+      const decodedToken = decode(token);
+      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+    }
+    settUser(JSON.parse(localStorage.getItem("profile")));
+  }, [user]);
+  const logout = () => {
+    localStorage.clear();
 
-  console.log(contact);
-  const [page, setPage] = useState("Home");
-  const [login, setLogin] = useState(false);
+    settUser(null);
+  };
   return (
-    <div className={styles.container}>
-      <div className={styles.sidebar}>
-        <Sidebar setPage={setPage} />
+    <BrowserRouter>
+      <div className={styles.container}>
+        <div className={styles.sidebar}>
+          <Sidebar />
+        </div>
+        <div className={styles.home}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <React.Fragment>
+                  <div className={styles.content}>
+                    <AnnouncementHead />
+                    <About />
+                    <Feature />
+                    <Committee />
+                    <Complaint />
+                    <Expenditure />
+                    <Announcement />
+                    <Bills />
+                    <Facilitycontacts />
+                  </div>
+                </React.Fragment>
+              }
+            />
+            <Route path="/announcement" element={<Announcement />} />
+            <Route path="/fcontact" element={<Facilitycontacts />} />
+            <Route path="/funds" element={<Funds />} />
+            <Route path="/expenditure" element={<Expenditure />} />
+            <Route path="/complaint" element={<Complaint />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+          <Footer />
+        </div>
+        <div className={styles.profile}>
+          {user ? <Profile /> : <Login settUser={settUser} />}
+        </div>
       </div>
-      <div className={styles.home}>
-        {page === "Home" && <AnnouncementHead />}
-        {page === "Home" && <About />}
-        {page === "Home" && <Complaint />}
-        {page === "Complaint" && <Complaint />}
-        {page === "Home" && <Committee />}
-        {page === "Expenditure" && <Expenditure />}
-        {page === "Announcement" && <Announcement />}
-        {page === "Home" && <Bills />}
-        {page === "Home" && <Facilitycontacts />}
-        {page === "Facility Contact" && <Facilitycontacts />}
-        <Register/>
-      </div>
-      <div className={styles.profile}>
-        {login ? <Profile /> : <Login setLogin={setLogin} />}
-      </div>
-
-      {/* { contact.map((data,index)=><p key={index}>{data.name} {data.email} { data.message}</p>)} */}
-    </div>
+    </BrowserRouter>
   );
-}
+};
 export default App;

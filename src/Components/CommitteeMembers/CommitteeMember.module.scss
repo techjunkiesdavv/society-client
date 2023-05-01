@@ -1,37 +1,48 @@
 .cmemberContainer {
-    background-color: #F0EDE2;
-    padding:.75rem;
+    background-color: #0A0909;
+    padding:.1rem 2rem;
   ::-webkit-scrollbar{
     display:none
   }
   h2 {
-    margin: 1.5rem;
+    margin: 1rem 0rem;
     font-size:2rem;
     letter-spacing: 0.04em;
-    color: #000000;
+    color: #BEBEBE;
     font-weight: 700;
   } 
+  .h21{
+    color: #EFEFEF;
+  }
+  .h22{
+    color: #FFDF8D;
+  }
   .allcards{
     display: flex;
     overflow-x: scroll;
+    
     .card {
     display: flex;
     align-items: center;
     animation-delay: 1s;
     justify-content: space-evenly;
-    background-color: #1B2227;;
+    background-color: #0A0909;;
     border: 1px solid #747474;
-    border-radius: 20px;
+    border-radius: 2px;
     padding: 1.3rem 1.3rem;
     margin: 1.5rem;
+    margin-left: 0rem;
+
     .memberimg {
         display: flex;
         flex-wrap: wrap;
+       
       img {
-        height: 6rem;
-        width: 6rem;
-        border-radius: 100px;
+        height: 7rem;
+        width: 7rem;
+       
         object-fit: cover;
+      
       }
     }
     .memberdetails {
@@ -40,6 +51,7 @@
       align-items: flex-start;
       margin-left: 1.87rem;
       text-align: center;
+      color: #EFEFEF;
       .membername {
         font-family: "Merriweather";
         font-style: normal;
@@ -47,7 +59,7 @@
         font-size: 1rem;
         white-space: nowrap;
         letter-spacing: 0.02em;
-        color: #F0EDE2;
+
       }
       .memberrole {
         white-space: nowrap;
@@ -55,7 +67,7 @@
         font-weight: 400;
         font-size: .7rem;
         letter-spacing: 0.1em;
-        color: #F0EDE2;
+        
       }
       .phone {
         white-space: nowrap;
@@ -63,7 +75,6 @@
         display: flex;
         width: 100%;
         align-items: center;
-        color: #E8E5DC;
         p {
           margin-left:.5rem;
           font-weight: 300;
@@ -78,7 +89,7 @@
         font-weight: 300; 
         font-size:.7rem;
         letter-spacing: 0.02em;
-        color: #E8E5DC;
+        color: #EFEFEF;;
         margin-top: .5rem;
         .memberhome {
           margin-left:.5rem;
@@ -86,7 +97,7 @@
           display: flex;
             justify-content: space-evenly;
           .line {
-            background-color: #E8E5DC;
+            background-color: #EFEFEF;;
             width: 1px;
             margin: 0rem 0.6rem;
           }
@@ -99,13 +110,23 @@
     }
   }
   .scrollbuttons{
-   text-align: right;
+   display: flex;
+   justify-content: flex-end;
     margin: 1.8rem 2.6rem;
     :hover{
         cursor: pointer;
     }
-    .leftarrow{
-        margin-right: 1.8rem;
+    .leftArrow{
+      display: flex;
+      text-align: center;
+      margin-right: 1.8rem;
+      background-color: #FFDF8D;
+      padding: .8rem;
+    }
+    .rightArrow{
+      display: flex;
+      padding: .8rem;
+      background-color: #FFDF8D;
     }
   }
 }
