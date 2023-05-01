@@ -11,7 +11,16 @@ import electricianimg1 from '../../assets/electrician1.png';
 import plumberimg1 from '../../assets/plumber1.png';
 import cableimg1 from '../../assets/cable1.png';
 import carpenterimg1 from '../../assets/carpenter1.png';
+// import { fetchData } from "../../api/fetch";
+// import { useState,useEffect } from 'react';
+
+
 const Facilitycontacts = () => {
+//     const [contact, setContact] = useState([]);
+//   useEffect(() => {
+//     fetchData("facilityContacts").then((data) => setContact(data));
+//     console.log(contact[0]);
+//   }, [contact]);
     const facilities =
         [
             [

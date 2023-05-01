@@ -6,7 +6,6 @@ import eyeopen from '../../assets/show.svg';
 import eyeclose from '../../assets/hide.svg';
 import lock from '../../assets/passw.svg';
 import {  Link } from 'react-router-dom';
-
 import { signin } from '../../actions/auth';
 // images folder after merge
 const initialState = {  email: '', password: ''};
@@ -34,9 +33,8 @@ const Login = ({settUser}) => {
       e.preventDefault() ;
       const data=await signin(formData);
       settUser(data);
-
-     
-    setIsLogin(true) ;
+      console.log(data);     
+      setIsLogin(true) ;
 
     }
     const handleChange=(e)=>{

@@ -7,9 +7,7 @@
   background-color: #0A0909;
   border-left: 1px solid #EFEFEF;
   padding: 3rem 0rem;
-  button:hover{
-    cursor: pointer;
-  }
+  
   .userinfo {
     margin: 0rem 6rem;
     display: flex;
@@ -117,11 +115,17 @@
     .status {
       margin: 0rem 1.5rem;
       position: relative;
+      
       .buttoncolorpaid {
       border: 1px solid #4BFF3B;
+      
+      
+    }
+    .buttoncolorunpaid {
+      border: 1px solid #FF0000;
       }
-      .buttoncolorunpaid {
-      border: 1px solid #FF0000
+      :hover{
+        cursor: pointer;
       }
       button {
         position: relative;
@@ -134,6 +138,7 @@
         letter-spacing: 0.02em;
         color: #FFFFFF;
         background-color: transparent;
+       
       }
     }
   }

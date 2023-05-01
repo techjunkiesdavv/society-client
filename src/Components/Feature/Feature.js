@@ -25,8 +25,8 @@ const Feature = () => {
         <p className='faboutHead'>We provides key features and services that are essential for the well-being of society members</p>
         </div>
         <div className='featureContainer'>
-        {featuresData.map((item) => (
-          <FeatureCard item={item} key={item.id} data-id={item.id}/>
+        {featuresData.map((item,i) => (
+          <FeatureCard item={item} key={i} data-id={item.id}/>
         ))}
         </div>
     </div>

@@ -20,6 +20,7 @@
   .allcards{
     display: flex;
     overflow-x: scroll;
+    
     .card {
     display: flex;
     align-items: center;
@@ -31,14 +32,17 @@
     padding: 1.3rem 1.3rem;
     margin: 1.5rem;
     margin-left: 0rem;
+
     .memberimg {
         display: flex;
         flex-wrap: wrap;
+       
       img {
-        height: 6rem;
-        width: 6rem;
-        border-radius: 100px;
+        height: 7rem;
+        width: 7rem;
+       
         object-fit: cover;
+      
       }
     }
     .memberdetails {

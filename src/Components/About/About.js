@@ -1,20 +1,23 @@
 import React from "react";
 import { images } from "../../constants";
-import para from "../../constants";
 
+import { fetchData } from "../../api/fetch";
+import { useEffect, useState } from "react";
 import styles from "./about.module.scss";
 
 const About = () => {
+  const [data, setdata] = useState([]);
+  useEffect(() => {
+    fetchData("about").then((data) => setdata(data));
+    
+  }, [data]);
   return (
     <div className={styles.bcontainer}>
       <div className={styles.acontainer}>
         <div className={styles.aboutContainer}>
           <h1 className={styles.heading}>ABOUT</h1>
           <h2 className={styles.subhead}>
-            Your Business Success Built
-            <br />
-            On A Powerful Customer <br />
-            Experience Platform
+          {data.length>=1 && data[0].heading}
           </h2>
           <p
             className={`${styles.content} ${styles.ellipsis}`}
@@ -22,7 +25,7 @@ const About = () => {
               element.currentTarget.classList.remove(styles.ellipsis);
             }}
           >
-            {para}
+            {data.length>=1 && data[0].content}
           </p>
         </div>
         <div className={styles.circular}>
@@ -30,7 +33,7 @@ const About = () => {
           <div className={styles.block1}>
             <div className={styles.imgicon}>
               <img src={images.building} alt="" />
-              <p>8</p>
+              <p>{data.length>=1 && data[0].wings}</p>
             </div>
             <div>Wings</div>
           </div>
@@ -38,7 +41,7 @@ const About = () => {
           <div className={styles.block2}>
             <div className={styles.imgicon}>
               <img src={images.group} alt="" />
-              <p>2500</p>
+              <p>{data.length>=1 && data[0].members}</p>
             </div>
             <div>Members</div>
           </div>
@@ -46,7 +49,7 @@ const About = () => {
           <div className={styles.block3}>
             <div className={styles.imgicon}>
               <img src={images.flat} alt="" />
-              <p>126</p>
+              <p>{data.length>=1 && data[0].flats}</p>
             </div>
             <div>Flat</div>
           </div>

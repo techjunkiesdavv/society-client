@@ -32,7 +32,7 @@
       text-overflow: ellipsis;
       overflow: hidden;
       display: -webkit-box;
-      -webkit-line-clamp: 9;
+      -webkit-line-clamp: 8;
       -webkit-box-orient: vertical;
       cursor: pointer;
     }
@@ -92,7 +92,7 @@
         max-height: fit-content;
         max-width: fit-content;
         background: #ffffff;
-        padding: .8rem;
+        padding: .7rem;
         border-radius: 2px;
         font-size: .8rem;
         font-weight: 700;
