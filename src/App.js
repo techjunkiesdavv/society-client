@@ -58,10 +58,6 @@ const App = () => {
                     <Feature />
                     <Committee />
                     <Complaint />
-                    <Expenditure />
-                    <Announcement />
-                    <Bills />
-                    <Facilitycontacts />
                   </div>
                 </React.Fragment>
               }

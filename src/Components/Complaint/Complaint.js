@@ -1,20 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./complaint.module.scss";
+import {client} from "../../api/client";
+import { fetchUser } from "../../api/fetch";
 
 const Complaint = () => {
   const [complaintSubject, setComplaintSubject] = useState("");
   const [complaint, setComplaint] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const user = JSON.parse(localStorage.getItem('profile'));
+  const [data,setData]=useState("");
+  useEffect(()=>{
+  if (user?.result){
+  const getData = async()=>{
+    const response = await fetchUser(user.result.email);
+    setData(response); 
+  }
+  getData();
+}
+},[])
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("subject:", complaintSubject);
-    console.log("complaint:", complaint);
 
     setComplaint("");
     setComplaintSubject("");
-
     setSubmitted(true);
+    client
+          .create({
+            _type: "complaint",
+            user:user.result.email,
+            flat:data.wing + data.flat,
+            time:new Date(),
+            complaint,
+          })
+          .then((response) => {
+            console.log("Object created successfully: ", response);
+            alert("Complaint sent successfully");
+          })
+          .catch((error) => {
+            console.error("Error creating object: ", error);
+            alert("Complaint unable to send ");
+          });
+    setSubmitted(false);
+    setComplaint("");
+    setComplaintSubject("");
   };
   return (
     <div className={styles.container}>
@@ -28,6 +58,7 @@ const Complaint = () => {
           className={styles.input}
           placeholder="Enter subject here"
           required
+          value={complaintSubject}
           onChange={(e) => {
             setComplaintSubject(e.target.value);
           }}
@@ -36,6 +67,7 @@ const Complaint = () => {
           className={styles.textarea}
           placeholder="Enter Message here!!!!!!!"
           required
+          value={complaint}
           onChange={(e) => {
             setComplaint(e.target.value);
           }}

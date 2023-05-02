@@ -33,7 +33,6 @@ const Login = ({settUser}) => {
       e.preventDefault() ;
       const data=await signin(formData);
       settUser(data);
-      console.log(data);     
       setIsLogin(true) ;
 
     }
