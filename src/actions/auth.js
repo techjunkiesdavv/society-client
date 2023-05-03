@@ -5,9 +5,7 @@ export const signin =async (formData)=>{
 
 try {
     console.log(formData)
-    const {data}=await api.signIn(formData);
-
-    
+    const {data}=await api.signIn(formData);    
     localStorage.setItem('profile',JSON.stringify(data));
     return data;
 
