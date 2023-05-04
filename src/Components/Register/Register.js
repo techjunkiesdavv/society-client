@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Register.module.scss";
 import { client } from "../../api/client";
-// import { fetchData } from "../../api/fetch";
 
 export default function Register() {
   const [firstName, setFirstName] = useState("");
