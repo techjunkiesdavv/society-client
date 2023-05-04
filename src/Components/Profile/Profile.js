@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Profile.module.scss";
-import profile from "../../assets/sihphto3.jpeg";
+import profile from "../../assets/download.png";
+import { fetchUser } from "../../api/fetch";
 const Profile = () => {
+  const user = JSON.parse(localStorage.getItem('profile')).result;
+  const [data,setData]=useState("");
+  useEffect(()=>{
+  if (user){
+  const getData = async()=>{
+    const response = await fetchUser(user.email);
+    setData(response); 
+  }
+  getData();
+}
+},[user])
   const userdetails = {
     url: profile,
-    name: "Ms Suhani Verma",
-    phone: "7000171916",
-    wing: "A",
-    flat: "201",
+    name: data.firstName,
+    phone: data.phone,
+    wing: data.wing,
+    flat: data.flat,
   };
   const bills = [
     {

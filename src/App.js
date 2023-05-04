@@ -11,7 +11,7 @@ import {
   Register,
   AnnouncementHead,
   Facilitycontacts,
-  Bills,
+  // Bills,
   Footer,
   Funds,
 } from "./Components";
@@ -58,10 +58,6 @@ const App = () => {
                     <Feature />
                     <Committee />
                     <Complaint />
-                    <Expenditure />
-                    <Announcement />
-                    <Bills />
-                    <Facilitycontacts />
                   </div>
                 </React.Fragment>
               }

@@ -1,20 +1,43 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import styles from "./complaint.module.scss";
+import {client} from "../../api/client";
+import { fetchUser } from "../../api/fetch";
 
 const Complaint = () => {
   const [complaintSubject, setComplaintSubject] = useState("");
   const [complaint, setComplaint] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
+  const user = JSON.parse(localStorage.getItem('profile'));
+  const fetchuser= async()=>{
+    const response = await fetchUser(user.result.email);
+    return response;
+  }
+    const handleSubmit = async(e) => {
     e.preventDefault();
+    const responses = await fetchuser();
     console.log("subject:", complaintSubject);
-    console.log("complaint:", complaint);
-
     setComplaint("");
     setComplaintSubject("");
-
     setSubmitted(true);
+    client
+          .create({
+            _type: "complaint",
+            user:user.result.email,
+            flat:responses.wing + responses.flat,
+            time:new Date(),
+            complaint,
+          })
+          .then((response) => {
+            console.log("Object created successfully: ", response);
+            alert("Complaint sent successfully");
+          })
+          .catch((error) => {
+            console.error("Error creating object: ", error);
+            alert("Complaint unable to send ");
+          });
+    setSubmitted(false);
+    setComplaint("");
+    setComplaintSubject("");
   };
   return (
     <div className={styles.container}>
@@ -28,6 +51,7 @@ const Complaint = () => {
           className={styles.input}
           placeholder="Enter subject here"
           required
+          value={complaintSubject}
           onChange={(e) => {
             setComplaintSubject(e.target.value);
           }}
@@ -36,14 +60,14 @@ const Complaint = () => {
           className={styles.textarea}
           placeholder="Enter Message here!!!!!!!"
           required
+          value={complaint}
           onChange={(e) => {
             setComplaint(e.target.value);
           }}
         ></textarea>
-        
-        <button className={styles.btn} disabled={submitted}>
-          Submit
-        </button>
+        {
+          user? <button className={styles.btn} disabled={submitted}>Submit</button>: <p className={styles.loginalrt}>Please login to file a Complaint</p>
+        }
       </form>
     </div>
   );
