@@ -18,28 +18,28 @@ import {
 import "./App.module.scss";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import decode from "jwt-decode";
+// import decode from "jwt-decode";
 import styles from "./App.module.scss";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 
 const App = () => {
     const [user, settUser] = useState(
     JSON.parse(localStorage.getItem("profile"))
   );
-
-  useEffect(() => {
-    const token = user?.token;
-    if (token) {
-      const decodedToken = decode(token);
-      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
-    }
-    settUser(JSON.parse(localStorage.getItem("profile")));
-  }, [user]);
-  const logout = () => {
-    localStorage.clear();
-
-    settUser(null);
-  };
+  // const logout = () => {
+  //   localStorage.clear();
+  //   settUser(null);
+  // };
+  //Auto logout feature if implemented earlier
+  // useEffect(() => {
+  //   const token = user?.token;
+  //   if (token) {
+  //     const decodedToken = decode(token);
+  //     if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+  //   }
+  //   settUser(JSON.parse(localStorage.getItem("profile")));
+  // }, [user?.token]);
+  
   return (
     <BrowserRouter>
       <div className={styles.container}>
