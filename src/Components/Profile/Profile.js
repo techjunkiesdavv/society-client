@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import styles from "./Profile.module.scss";
 import profile from "../../assets/download.png";
 import { fetchUser } from "../../api/fetch";
-
-
 const Profile = () => {
   const user = JSON.parse(localStorage.getItem('profile')).result;
   const [data,setData]=useState("");
@@ -15,8 +13,7 @@ const Profile = () => {
   }
   getData();
 }
-},[])
-console.log(data);
+},[user])
   const userdetails = {
     url: profile,
     name: data.firstName,

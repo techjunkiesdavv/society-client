@@ -11,7 +11,7 @@ import {
   Register,
   AnnouncementHead,
   Facilitycontacts,
-  Bills,
+  // Bills,
   Footer,
   Funds,
 } from "./Components";

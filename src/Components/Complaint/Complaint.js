@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import styles from "./complaint.module.scss";
 import {client} from "../../api/client";
 import { fetchUser } from "../../api/fetch";
@@ -8,21 +8,14 @@ const Complaint = () => {
   const [complaint, setComplaint] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const user = JSON.parse(localStorage.getItem('profile'));
-  const [data,setData]=useState("");
-  useEffect(()=>{
-  if (user?.result){
-  const getData = async()=>{
+  const fetchuser= async()=>{
     const response = await fetchUser(user.result.email);
-    setData(response); 
+    return response;
   }
-  getData();
-}
-},[])
-
-  const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
     e.preventDefault();
+    const responses = await fetchuser();
     console.log("subject:", complaintSubject);
-
     setComplaint("");
     setComplaintSubject("");
     setSubmitted(true);
@@ -30,7 +23,7 @@ const Complaint = () => {
           .create({
             _type: "complaint",
             user:user.result.email,
-            flat:data.wing + data.flat,
+            flat:responses.wing + responses.flat,
             time:new Date(),
             complaint,
           })
@@ -72,10 +65,9 @@ const Complaint = () => {
             setComplaint(e.target.value);
           }}
         ></textarea>
-        
-        <button className={styles.btn} disabled={submitted}>
-          Submit
-        </button>
+        {
+          user? <button className={styles.btn} disabled={submitted}>Submit</button>: <p className={styles.loginalrt}>Please login to file a Complaint</p>
+        }
       </form>
     </div>
   );
