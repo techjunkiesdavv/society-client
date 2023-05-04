@@ -10,16 +10,17 @@ const Profile = () => {
   const getData = async()=>{
     const response = await fetchUser(user.email);
     setData(response); 
+    console.log(response);
   }
   getData();
 }
 },[user])
   const userdetails = {
     url: profile,
-    name: data.firstName,
-    phone: data.phone,
-    wing: data.wing,
-    flat: data.flat,
+    name: data&&data.firstName,
+    phone: data&&data.phone,
+    wing: data&&data.wing,
+    flat: data&&data.flat,
   };
   const bills = [
     {
@@ -48,17 +49,17 @@ const Profile = () => {
         <div className={styles.profileimg}>
           <img src={userdetails.url} alt="profileimage" />
         </div>
-        <p className={styles.username}>{userdetails.name}</p>
-        <p className={styles.userphone}>{userdetails.phone}</p>
+        <p className={styles.username}>{userdetails&&userdetails.name}</p>
+        <p className={styles.userphone}>{userdetails&&userdetails.phone}</p>
       </div>
       <div className={styles.userhome}>
         <div className={styles.userwing}>
-          <p className={styles.wingname}>{userdetails.wing}</p>
+          <p className={styles.wingname}>{userdetails&&userdetails.wing}</p>
           <p className={styles.wing}>Wing</p>
         </div>
         <div className={styles.line} />
         <div className={styles.userflat}>
-          <p className={styles.flatname}>{userdetails.flat}</p>
+          <p className={styles.flatname}>{userdetails&&userdetails.flat}</p>
           <p className={styles.flat}>Flat</p>
         </div>
       </div>
