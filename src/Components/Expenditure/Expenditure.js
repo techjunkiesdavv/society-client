@@ -1,27 +1,15 @@
 import React from "react";
 import { BarGraph } from "./BarGraph";
 import styles from "./Expenditure.module.scss";
+import { fetchData } from "../../api/fetch";
+import { useState,useEffect } from "react";
 
-const SocietyBalance = "5000000";
-const data = [
-  {
-    title: "Pipeline Breakage",
-    payment: "50000",
-    Date: "2016-05-18T16:00:00Z",
-  },
-  {
-    title: "Pipeline Breakage",
-    payment: "50000",
-    Date: "2016-05-18T16:00:00Z",
-  },
-  {
-    title: "Pipeline Breakage",
-    payment: "50000",
-    Date: "2016-05-18T16:00:00Z",
-  },
-];
 
 const Expenditure = () => {
+  const [expenditure, setExpenditure] = useState([]);
+  useEffect(() => {
+    fetchData("expenditure").then((data) => setExpenditure(data));
+  },[]);
   function convertDateFormat(dateString) {
     const date = new Date(dateString);
     const options = { day: "numeric", month: "short", year: "numeric" };
@@ -47,10 +35,10 @@ const Expenditure = () => {
           <hr />
           <div className={styles.grpText}>
           <span className={styles.balance}>Society Balance</span>
-          <h2>&#8377;{numberWithCommas(SocietyBalance)} </h2>
+          <h2>&#8377;{expenditure.length>0 ? numberWithCommas(expenditure[0].balance):""} </h2>
           </div>
         </div>
-
+{console.log(expenditure)}
         <div className={styles.bar}>
           <BarGraph />
         </div>
@@ -58,12 +46,13 @@ const Expenditure = () => {
       <div className={styles.paymentHis}>
         <h2>Payment History</h2>
         <div className={styles.list}>
-          {data.map((item,index) => {
+          {expenditure.length>0 && expenditure[0].paymentHistory
+.map((item,index) => {
             return (
               <div className={styles.item} key={index}>
                 <div className={styles.lefta}>
                   <h4>{item.title}</h4>
-                  <h6>{convertDateFormat(item.Date)}</h6>
+                  <h6>{convertDateFormat(item.date)}</h6>
                 </div>
                 <h3>{`₹ ${numberWithCommas(item.payment)}`}</h3>
               </div>

@@ -9,7 +9,7 @@ const Announcement = () => {
   useEffect(() => {
     fetchData("announcements").then((data) => setdata(data));
     
-  }, [data]);
+  }, []);
   
   
   return (

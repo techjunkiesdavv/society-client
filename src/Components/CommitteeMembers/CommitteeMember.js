@@ -1,22 +1,17 @@
 import styles from "./CommitteeMember.module.scss";
 import{ useEffect, useState } from "react";
-
 import phoneicon from "../../assets/phoneicon.svg";
 import homeicon from "../../assets/homeicon2.svg";
 import leftArrow from "../../assets/leftArrow.svg";
 import rightArrow from "../../assets/rightArrow.svg";
 import { fetchData } from "../../api/fetch";
 import { urlFor } from "../../api/client";
-
-
-
-
 const CommitteeMember = () => {
   const [detail, setdetail] = useState([]);
   useEffect(() => {
     fetchData("committe_members").then((detail) => setdetail(detail));
    
-  }, [detail]);
+  }, []);
     
   const scrollLeft = (val) => {
     document.getElementById("container").scrollLeft -= val;
