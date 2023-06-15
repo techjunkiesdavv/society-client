@@ -10,7 +10,7 @@ export default function AnnouncementHead() {
     useEffect(() => {
       fetchData("announcements").then((data) => setdata(data));
       
-    }, [data]);
+    }, []);
   
   const roller = () => {
     const text = document.getElementById("text");

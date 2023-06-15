@@ -10,7 +10,7 @@ const About = () => {
   useEffect(() => {
     fetchData("about").then((data) => setdata(data));
     
-  }, [data]);
+  }, []);
   return (
     <div className={styles.bcontainer}>
       <div className={styles.acontainer}>
