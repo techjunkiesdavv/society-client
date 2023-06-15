@@ -10,7 +10,6 @@ const Profile = () => {
   const getData = async()=>{
     const response = await fetchUser(user.email);
     setData(response); 
-    console.log(response);
   }
   getData();
 }
