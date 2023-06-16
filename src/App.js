@@ -11,7 +11,7 @@ import {
   Register,
   AnnouncementHead,
   Facilitycontacts,
-  // Bills,
+  Bills,
   Footer,
   Funds,
 } from "./Components";
@@ -65,6 +65,7 @@ const App = () => {
             <Route path="/announcement" element={<Announcement />} />
             <Route path="/fcontact" element={<Facilitycontacts />} />
             <Route path="/funds" element={<Funds />} />
+            <Route path="/bills" element={<Bills />} />
             <Route path="/expenditure" element={<Expenditure />} />
             <Route path="/complaint" element={<Complaint />} />
             <Route path="/register" element={<Register />} />

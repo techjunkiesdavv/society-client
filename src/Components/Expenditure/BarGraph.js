@@ -1,15 +1,44 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Cell, CartesianGrid, ResponsiveContainer } from 'recharts';
 
-const data = [
-  { name: 'January', expenses: 15000, color: '#9ADCFF' },
-  { name: 'February', expenses: 25000, color: '#F7E9A0' },
-  { name: 'March', expenses: 35000, color: '#FF6962' },
-  { name: 'April', expenses: 43000, color: '#B08BBB' },
-  { name: 'May', expenses: 48000, color: '#9BD2CF' },
-];
 
-export const BarGraph = () => {
+
+export const BarGraph = (props) => {
+
+const Monthdata = [
+  { name: 'Jan', expenses: 0, color: '#9ADCFF' },
+  { name: 'Feb', expenses: 0, color: '#F7E9A0' },
+  { name: 'Mar', expenses: 0, color: '#FF6962' },
+  { name: 'Apr', expenses: 0, color: '#B08BBB' },
+  { name: 'May', expenses: 0, color: '#9BD2CF' },
+  { name: 'June', expenses: 0, color: '#9ADCFF' },
+  { name: 'July', expenses: 0, color: '#F7E9A0' },
+  { name: 'Aug', expenses: 0, color: '#FF6962' },
+  { name: 'Sept', expenses: 0, color: '#B08BBB' },
+  { name: 'Oct', expenses: 0, color: '#9BD2CF' },
+  { name: 'Nov', expenses: 0, color: '#9ADCFF' },
+  { name: 'Dec', expenses: 0, color: '#9ADCFF' },
+];
+  const updatedMonthData = [...Monthdata]; // Create a copy of the Monthdata array
+  
+  const exp = props?.val[0]?.paymentHistory;
+  
+  if (props.val) {
+    exp?.forEach((item) => {
+      const date = new Date(item.date);
+      const month = date.getMonth();
+      console.log(item);
+      updatedMonthData[month].expenses += item.payment;
+    });
+  }
+
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth();
+
+  const data = updatedMonthData.slice(currentMonth - 5, currentMonth + 1);
+  
+
+
   return (
     <div style={{ width:  "100%" , height: "100%" }}>
     <ResponsiveContainer width='100%' height="100%">

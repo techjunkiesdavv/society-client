@@ -17,14 +17,9 @@ const Expenditure = () => {
   }
 
   function numberWithCommas(x) {
-    let p = "";
-    if (x.length > 3) {
-      let temp = x.slice(0, x.length - 4);
-      p = temp.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",");
-      p = p + "," + x.slice(x.length - 3, x.length);
-      return p;
-    }
-    return x.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+   
+   const formattedAmount = x.toLocaleString('en-IN');
+   return formattedAmount ;
   }
 
   return (
@@ -40,7 +35,7 @@ const Expenditure = () => {
         </div>
 {console.log(expenditure)}
         <div className={styles.bar}>
-          <BarGraph />
+          <BarGraph val={expenditure} />
         </div>
       </div>
       <div className={styles.paymentHis}>
