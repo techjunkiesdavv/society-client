@@ -1,7 +1,11 @@
 .container{
     display: flex;
-    flex-direction: row;
     
+    background-color: #0A0909;
+    @media screen and (max-width:420px)  {
+        flex-direction:column;
+        
+     }
     .sidebar{
         width: 10%;
         position: fixed;
@@ -13,6 +17,14 @@
         @media screen and (max-width:420px)  {
             display: none;
             
+         }
+    }
+    .hamper{
+        display: none;
+        @media screen and (max-width:420px)  {
+            width: 100%;
+            display:block; 
+            position: relative;
          }
     }
    .home{

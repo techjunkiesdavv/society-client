@@ -13,7 +13,7 @@ import Feature from "./Feature/Feature";
 import Facilitycontacts from './FacilityContacts/Facilitycontacts.js'
 import Footer from "./Footer/Footer.js";
 import Funds from "./Funds/Funds.js";
-
+import Hamper from "./hamper/Hamper";
 export {
   AnnouncementHead,
   Complaint,
@@ -30,5 +30,6 @@ export {
   Feature,
   Footer, 
   Funds,
+  Hamper
 };
 

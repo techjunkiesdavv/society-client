@@ -1,0 +1,33 @@
+.head{
+    height: 4rem;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin-top: 2.1rem;
+    display: flex;
+    align-items: center;
+    .hamper{
+       margin-left: 1.1rem;
+       
+    }
+    :hover{
+        cursor: pointer;
+    }
+}
+.linkscard{
+    height: fit-content;
+    position: absolute;
+    float: left;
+    width: 232px;
+    background-color: color-mix(in srgb, #0A0909 100%, white 25%);
+    .links {
+        font-size: 1.2rem;
+        margin: 2rem 1rem;
+        align-self: center;
+        color: #FFDF8D;
+      }
+      .links:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        color: #FFDF8D;
+      }
+}
