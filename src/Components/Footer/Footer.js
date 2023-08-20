@@ -43,7 +43,7 @@ const Footer = () => {
             {
                     quicklinks.map((link,i)=>{return(
                         <Link to={link.url} 
-                        style={{ textDecoration: "none", color: "inherit" } }>
+                        style={{ textDecoration: "none", color: "inherit" } } key={i}>
                         <div className={styles.links} key={i}>{link.tag}</div>
                         </Link>
                     )}
