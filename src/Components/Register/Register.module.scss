@@ -1,22 +1,25 @@
 .container {
-    padding: 30px;
     width: 100%;
     min-height: 100vh;
-    background-color: #f0ede2;
+    background-color: #0A0909;
     display: flex;
     flex-direction: column;
     align-items: center;
-  
     .border {
-      margin: 4rem 10rem;
+      margin: 4% 4%;
       border: 1px solid #bababa;
       box-shadow: 0.9px 0.9px #bababa;
-      padding: 2.5rem 6rem;
+      padding: 6vw 6vw;
       border-radius: 20px;
-  
+      @media screen and (max-width: 600px) {
+        border-radius: 10px;
+        border: 0px;
+        box-shadow: none;
+      }
       .title {
         font-size: 1.5rem;
         font-weight: 600;
+        color: #FFFFFF;
       }
   
       form {
@@ -25,11 +28,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-  
         .userdetails {
           display: flex;
           width: 100%;
-  
+
           flex-wrap: wrap;
           justify-content: space-around;
           margin: 20px 0 12px 0;
@@ -98,43 +100,59 @@
             input {
               outline: none;
               border: none;
-  
               border-bottom: 1px solid #bababa;
-              background-color: #f0ede2;
-  
+              background-color: #0A0909;
               width: 100%;
               font-size: 16px;
               padding: 1rem;
               margin: 0.5rem;
               transition: all 0.3s ease;
+              color: #FFFFFF;
+              
+            }
+            ::placeholder {
+              color: #747474;
+              opacity: 1;
+            }
+            
+            :-ms-input-placeholder {
+              color: #747474;
+            }
+            
+            ::-ms-input-placeholder {
+              color: #747474;
             }
             :focus,
             :valid {
-              border-color: #f25d3b;
+              border-color: #FFDF8D;
             }
           }
         }
         .button {
-          width: 100%;
+         
           align-items: center;
           justify-content: center;
           display: flex;
           button {
             padding: 1rem 5rem;
-  
             justify-content: center;
             align-items: center;
-            border-radius: 25px;
-            border: none;
-            color: #fff;
+            border-radius: 10px;
+            border: 1px solid #FFDF8D;
+            color: #0A0909;
             font-size: 1.2rem;
             font-weight: 600;
             letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
-            background: #f25d3b;
+            background-color: #0A0909;
+           color: #FFFFFF;
+            @media screen and (max-width: 600px) {
+              border-radius: 0px;
+            }
             &:hover {
-              background: #f25d3b;
+              background: #FFDF8D;
+              color: #0A0909;
             }
           }
         }
@@ -148,9 +166,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-  
+        color: #FFFFFF;
         .login {
-          color: #f25d3b;
+          color: #FFDF8D;
         }
       }
     }

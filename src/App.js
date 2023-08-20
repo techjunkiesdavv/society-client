@@ -14,6 +14,7 @@ import {
   // Bills,
   Footer,
   Funds,
+  Hamper
 } from "./Components";
 import "./App.module.scss";
 import React from "react";
@@ -46,6 +47,9 @@ const App = () => {
         <div className={styles.sidebar}>
           <Sidebar />
         </div>
+        <div className={styles.hamper}>
+        <Hamper/>
+        </div>
         <div className={styles.home}>
           <Routes>
             <Route
@@ -62,7 +66,7 @@ const App = () => {
                 </React.Fragment>
               }
             />
-            <Route path="/announcement" element={<Announcement />} />
+            <Route path="/announcement" element={<Announcement/>} />
             <Route path="/fcontact" element={<Facilitycontacts />} />
             <Route path="/funds" element={<Funds />} />
             <Route path="/expenditure" element={<Expenditure />} />

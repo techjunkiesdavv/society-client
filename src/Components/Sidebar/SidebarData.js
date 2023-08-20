@@ -25,7 +25,7 @@ export const SidebarData= [
         {
             title: "Funds",
             icon: <Fundicon/>,
-            link: "funds",
+            link: "/funds",
         },
         {
             title: "Expenditure",

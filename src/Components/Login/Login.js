@@ -11,11 +11,8 @@ import { signin } from '../../actions/auth';
 const initialState = {  email: '', password: ''};
 const Login = ({settUser}) => {
   const [showpassword, setshowpassword]=useState(false);
-
   const [formData,setFormData]=useState(initialState);
   const [isLogin,setIsLogin] = useState(false) ;
-  
-
   function Toggle() {
     var temp = document.getElementById("typepass");
     if (temp.type === "password") {
@@ -27,20 +24,14 @@ const Login = ({settUser}) => {
         setshowpassword(false);
     }
     }
-
     const handleLogin =async (e)=>{
-      
       e.preventDefault() ;
       const data=await signin(formData);
       settUser(data);
-      setIsLogin(true) ;
-
+      setIsLogin(true);
     }
     const handleChange=(e)=>{
-      
       setFormData({...formData,[e.target.name]:e.target.value});
-    
-    
     };
   return (
     <div className={styles.loginpage}>
@@ -69,7 +60,6 @@ const Login = ({settUser}) => {
           onChange={handleChange}
           required
           />
-     
         <img src={showpassword?eyeopen:eyeclose} alt='eyeopen' className={styles.eyeopen} onClick={Toggle}/>
       </div>
 
@@ -88,14 +78,14 @@ const Login = ({settUser}) => {
       { isLogin ? 'Logging in':' Log in' } 
       </button>
 
-   <Link to='/register' style={{ textDecoration: 'none', color: 'inherit' }}>   <div className={styles.register}>
+   <Link to='/register' style={{ textDecoration: 'none', color: 'inherit' }}>
+        <div className={styles.register}>
         <p className={styles.text1}>Don't have an account?</p>
         <p className={styles.text2}>Register now!</p>
-      </div>
-      </Link>
+        </div>
+    </Link>
       </form>
     </div> 
   );
 };
-
 export default Login;

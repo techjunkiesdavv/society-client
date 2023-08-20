@@ -1,12 +1,11 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import styles from './footer.module.scss';
 import footerimg from '../../assets/footer.png';
 import footermap from '..//..//assets/footermap.svg'
 import footercall from '..//..//assets/footercall.svg'
 import footeremail from '..//..//assets/footeremail.svg'
-
-
-const quicklinks=['Home','Funds','Announcements','Facility Contacts', 'Expenditure', 'Complaint']
+const quicklinks=[{tag:'Home',url:'/'},{tag:'Funds',url:'/funds'},{tag:'Announcements',url:'/announcement'},{tag:'Facility Contacts',url:'/fcontact'}, {tag:'Expenditure',url:'/expenditure'}, {tag:'Complaint',url:'/complaint'}]
 const info=[
     {
         img: footermap,
@@ -43,7 +42,10 @@ const Footer = () => {
             <div className={styles.quicklinks}>
             {
                     quicklinks.map((link,i)=>{return(
-                        <div className={styles.links} key={i}>{link}</div>
+                        <Link to={link.url} 
+                        style={{ textDecoration: "none", color: "inherit" } }>
+                        <div className={styles.links} key={i}>{link.tag}</div>
+                        </Link>
                     )}
             )}
             </div>
