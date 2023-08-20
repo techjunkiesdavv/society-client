@@ -23,14 +23,20 @@ export const SidebarData= [
             link: "/fcontact",
         },
         {
-            title: "Funds",
-            icon: <Fundicon/>,
-            link: "/funds",
+
+            title: "Bills",
+            icon: <Complainticon/>,
+            link: "/bills",
         },
-        {
+         {
             title: "Expenditure",
             icon: <Expendicon/>,
             link: "/expenditure",
+        },
+        {
+            title: "Funds",
+            icon: <Fundicon/>,
+            link: "funds",
         },
         {
             title: "Complaint",
